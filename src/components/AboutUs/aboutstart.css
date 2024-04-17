@@ -1,0 +1,34 @@
+.about-main-container{
+    display: flex;
+    margin-top: 1.5rem;
+    gap: 2rem;
+}
+.about-left{
+    background-color: #f5decdcc;
+    width: 40%;
+    border-radius: 0.8rem;
+}
+.about-left img{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 7rem;
+    height: 65vh;
+    width: 28vw;
+}
+.about-right{
+    width: 60%;
+}
+.about-right ul{
+    margin-top: 2rem;
+    list-style: none;
+    gap: 2.5rem;
+    display: grid;
+}
+.about-right ul button{
+    background: #ff7000;
+    color: white;
+    border: navajowhite;
+    border-radius: 5px;
+    height: 2rem;
+    width: 11rem;
+}
