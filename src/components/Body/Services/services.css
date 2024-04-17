@@ -1,0 +1,38 @@
+.service-container{
+    margin: 2rem;
+    border-bottom: "1px solid";
+}
+.heading{
+    font-size: 2rem;
+    border-bottom: 1px solid;
+}
+.services-items{
+    width: 50%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    /* border-right: 1px solid; */
+    margin: 2rem;
+}
+.services-items img{
+    width: 3rem;
+}
+.item{
+    display: grid;
+    gap: 0.5rem;
+}
+.item-button{
+    height: 2rem;
+    width: 32rem;
+    background: none;
+    border: 1px solid grey;
+    color: #ff7000;
+    font-size: 18px;
+}
+.sec{
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+.border-right{
+    border-right: 1px solid;
+}

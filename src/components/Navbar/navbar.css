@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 2rem;
+    border-bottom: 1.5px solid grey;
+}
+.nav1{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.nav2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.nav2 li{
+    all: unset;
+}
+.nav2 li a{
+    text-decoration: none;
+}
+.contact button{
+    height: 2.2rem;
+    width: 10rem;
+    background: #ff7000;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+}
+.contact button:hover{
+    cursor: pointer;
+}

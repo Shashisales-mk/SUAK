@@ -1,0 +1,48 @@
+.start{
+    margin: 2rem;
+    display: flex;
+    gap: 4rem;
+}
+.start1{
+    /* margin: 3rem; */
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.start2{
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height: 25rem;
+    width: 40rem;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.box img{
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Allow the height to adjust proportionally */
+    display: block; /* Ensure the image behaves as a block element */
+}
+.gap{
+    display: grid;
+    gap: 10px;
+}
+.gap .a{
+    font-size: 20px;
+}
+.gap .b{
+    font-size: 5rem;
+}
+.gap button{
+    background: #ff7000;
+    height: 2.5rem;
+    width: 18rem;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}

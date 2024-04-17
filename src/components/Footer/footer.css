@@ -1,0 +1,36 @@
+.main-container{
+    margin: 2rem;
+    display: flex;
+    /* border-bottom: 1px solid; */
+}
+.left{
+    margin-right: 2rem;
+    border-right: 1px solid;
+    width: 50%;
+    display: grid;
+    gap: 1.5rem;
+}
+.right{
+    width: 50%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    gap: 15rem;
+}
+.pages{
+    display: grid;
+    gap: 2rem;
+}
+.styl{
+    font-size: 10px;
+    color: grey;
+}
+.footer-copyright{
+    gap: 60rem;
+    height: 2rem;
+    margin: 2rem;
+    border-top: 1px solid;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
