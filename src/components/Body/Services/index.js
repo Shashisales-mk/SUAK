@@ -17,7 +17,7 @@ export default function Services() {
             </div>
             <div className="item">
               <div style={{ fontSize: "2rem" }}>BUSINESS PROCESS SERVICES</div>
-              <div style={{ color: "grey", width: "34rem" }}>
+              <div style={{ color: "grey", width: "28rem" }}>
                 Looking for high performance, cost effective and multi-cultured
                 customer engagement process or just-in-time technical support
               </div>
@@ -32,7 +32,7 @@ export default function Services() {
             </div>
             <div className="item">
               <div style={{ fontSize: "2rem" }}>TALENT SERVICES</div>
-              <div style={{ color: "grey", width: "34rem" }}>
+              <div style={{ color: "grey", width: "28rem" }}>
                 360 degree human capital management services with global
                 delivery experience, diverse engagement models, and dedicated
                 practices for optimizing HR operations and processes
@@ -51,7 +51,7 @@ export default function Services() {
             </div>
             <div className="item">
               <div style={{ fontSize: "2rem" }}>STARTUP SERVICES</div>
-              <div style={{ color: "grey", width: "34rem" }}>
+              <div style={{ color: "grey", width: "28rem" }}>
                 We help in making your startup journeys smoother and seamless so
                 that you can focus on your vision and leave everything else on
                 us, we know execution is more critical than idea
@@ -67,7 +67,7 @@ export default function Services() {
             </div>
             <div className="item">
               <div style={{ fontSize: "2rem" }}>CONSULTING</div>
-              <div style={{ color: "grey", width: "33rem" }}>
+              <div style={{ color: "grey", width: "28rem" }}>
                 With strong delivery mechanism and global footprints in IT
                 projects, we know we have the capabilities to expand our horizon
                 across industries.
