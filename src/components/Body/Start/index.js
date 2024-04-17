@@ -7,18 +7,20 @@ export default function Start() {
       <div className="start">
         <div className="start1">
           <div className="gap">
-          <div className="a">
-            Experience our comprehensive range of services tailored to highlight
-            your
-          </div>
-          <div className="b">Talent Services.</div>
-          <div>
-            <button>Get Started</button>
-          </div>
+            <div className="a">
+              Experience our comprehensive range of services tailored to
+              highlight your
+            </div>
+            <div className="b">Talent Services.</div>
+            <div>
+              <button>Get Started</button>
+            </div>
           </div>
         </div>
         <div className="start2">
-            <div className="box"><img src={home_a} alt="home_a"></img></div>
+          <div className="box">
+            <img src={home_a} alt="home_a"></img>
+          </div>
         </div>
       </div>
     </div>

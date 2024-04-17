@@ -1,7 +1,6 @@
 .main-container{
     margin: 2rem;
     display: flex;
-    /* border-bottom: 1px solid; */
 }
 .left{
     margin-right: 2rem;
@@ -26,7 +25,7 @@
     color: grey;
 }
 .footer-copyright{
-    gap: 60rem;
+    gap: 57rem;
     height: 2rem;
     margin: 2rem;
     border-top: 1px solid;

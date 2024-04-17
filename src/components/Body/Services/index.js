@@ -90,20 +90,11 @@ export default function Services() {
           >
             <div>HOW YOU FIND WORK</div>
             <div style={{ fontSize: "3.5rem" }}>
-              are you a job <span style={{ color: "red" }}>seeker?</span> choose the appropriate option based on your
-              needs
+              are you a job <span style={{ color: "red" }}>seeker?</span> choose
+              the appropriate option based on your needs
             </div>
           </div>
-          <div
-            className="services-items"
-            // style={{
-            //   width: "50%",
-            //   marginTop: "0",
-            //   display: "flex",
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            // }}
-          >
+          <div className="services-items">
             <div style={{ width: "5rem" }}>apply for trending jobs</div>
             <div style={{ width: "5rem" }}>view all current job openings</div>
             <div style={{ width: "5rem" }}>submit your resume</div>

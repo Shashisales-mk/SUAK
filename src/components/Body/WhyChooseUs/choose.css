@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border-bottom: 1px solid grey; */
     font-size: 2rem;
     margin: 2rem;
 }
@@ -21,7 +20,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: darkblue; */
     height: 25rem;
     width: 50%;
     border-right: 1px solid grey;
@@ -33,16 +31,14 @@
     overflow: hidden;
 }
 .img2 img{
-    width: 100%; /* Make the image width 100% of its container */
-    height: auto; /* Allow the height to adjust proportionally */
-    display: block; /* Ensure the image behaves as a block element */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 .box2{
-    /* background: yellow; */
     display: grid;
     justify-content: center;
     align-items: center;
-    /* background: darkblue; */
     height: 30rem;
     width: 50%;
 }

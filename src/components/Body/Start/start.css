@@ -4,7 +4,6 @@
     gap: 4rem;
 }
 .start1{
-    /* margin: 3rem; */
     width: 50%;
     display: grid;
     justify-content: center;
@@ -18,14 +17,14 @@
 }
 .box{
     height: 25rem;
-    width: 40rem;
+    width: 38rem;
     overflow: hidden;
     border-radius: 15px;
 }
 .box img{
-    width: 100%; /* Make the image width 100% of its container */
-    height: auto; /* Allow the height to adjust proportionally */
-    display: block; /* Ensure the image behaves as a block element */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 .gap{
     display: grid;

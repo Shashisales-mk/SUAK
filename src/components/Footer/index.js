@@ -1,18 +1,22 @@
 import React from "react";
 import "./footer.css";
 import logo2 from "../../images/logo2.png";
-import socials from "../../images/Socials.png"
+import socials from "../../images/Socials.png";
 export default function Footer() {
   return (
     <div>
       <div className="main-container">
         <div className="left">
-          <div><img src={logo2} alt="logo2"></img></div>
+          <div>
+            <img src={logo2} alt="logo2"></img>
+          </div>
           <div>
             Let us help you build your dream team. Contact us today to find the
             perfect match for your company's success
           </div>
-          <div><img src={socials} alt="Socials"></img></div>
+          <div>
+            <img src={socials} alt="Socials"></img>
+          </div>
         </div>
         <div className="right">
           <div className="pages">
@@ -32,10 +36,12 @@ export default function Footer() {
       </div>
 
       <div className="footer-copyright">
-        <div className="styl">COPYRIGHT @2024 | ALL RIGHT BY SUAK LIVING | SITEMAP</div>
-        <div className="styl" style={{display: "flex", gap: "10px"}}>
-            <div>PRIVACY</div>
-            <div>IMPRINT</div>
+        <div className="styl">
+          COPYRIGHT @2024 | ALL RIGHT BY SUAK | SITEMAP
+        </div>
+        <div className="styl" style={{ display: "flex", gap: "10px" }}>
+          <div>PRIVACY</div>
+          <div>IMPRINT</div>
         </div>
       </div>
     </div>
