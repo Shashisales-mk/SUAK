@@ -26,7 +26,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="services-items">
+          <div className="services-items" style={{ marginLeft: "1rem" }}>
             <div>
               <img src={businessplan} alt="business-plan"></img>
             </div>
@@ -61,7 +61,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="services-items">
+          <div className="services-items" style={{ marginLeft: "1rem" }}>
             <div>
               <img src={strategicconsulting} alt="strategic-consulting"></img>
             </div>
@@ -94,11 +94,44 @@ export default function Services() {
               the appropriate option based on your needs
             </div>
           </div>
-          <div className="services-items">
-            <div style={{ width: "5rem" }}>apply for trending jobs</div>
-            <div style={{ width: "5rem" }}>view all current job openings</div>
-            <div style={{ width: "5rem" }}>submit your resume</div>
-            <div style={{ width: "5rem" }}>refer a freind</div>
+          <div
+            className="services-items"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              className="items-cont"
+              style={{ display: "grid", gap: "3rem" }}
+            >
+              <div style={{ display: "flex", gap: "2rem" }}>
+                <div style={{ width: "13rem" }}>
+                  <span style={{ textDecoration: "underline" }}>
+                    apply for trending jobs
+                  </span>
+                </div>
+                <div style={{ width: "13rem" }}>
+                  <span style={{ textDecoration: "underline" }}>
+                    view all current job openings
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", gap: "2rem" }}>
+                <div style={{ width: "13rem" }}>
+                  <span style={{ textDecoration: "underline" }}>
+                    submit your resume
+                  </span>
+                </div>
+                <div style={{ width: "13rem" }}>
+                  <span style={{ textDecoration: "underline" }}>
+                    refer a freind
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

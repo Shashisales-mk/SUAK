@@ -15,6 +15,7 @@ export default function Choose() {
           </div>
         </div>
         <div className="box2 cont-size">
+          <div className="inner-box">
           <div className="services-items">
             <div>
               <img src={badge1} alt="badge1" style={{ width: "2rem" }}></img>
@@ -29,6 +30,8 @@ export default function Choose() {
               </div>
             </div>
           </div>
+
+        <div style={{height: "0", borderBottom: "1px solid"}}></div>
 
           <div className="services-items">
             <div>
@@ -47,14 +50,16 @@ export default function Choose() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="sec" style={{ margin: "2rem" }}>
+          </div>
+        </div>
+      <div className="sec" style={{ margin: "3vw" }}>
         <div
           className="services-items"
           style={{
             borderRight: "1.5px solid",
             display: "grid",
             width: "50%",
+            margin: "2rem",
           }}
         >
           <div>HOW WE WORK</div>

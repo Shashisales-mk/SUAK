@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <img src={logo2} alt="logo2"></img>
           </div>
-          <div>
+          <div style={{marginRight:"2rem"}}>
             Let us help you build your dream team. Contact us today to find the
             perfect match for your company's success
           </div>

@@ -1,5 +1,5 @@
 .main-container{
-    margin: 2rem;
+    margin: 0 3vw;
     display: flex;
 }
 .left{
@@ -27,7 +27,7 @@
 .footer-copyright{
     gap: 57rem;
     height: 2rem;
-    margin: 2rem;
+    margin: 3vw;
     border-top: 1px solid;
     display: flex;
     justify-content: start;
