@@ -12,8 +12,8 @@ export default function Navbar() {
             <div className="nav2">
               <li><Link to="/about">ABOUT</Link></li>
               {/* <li><a href="/about">ABOUT US</a></li> */}
-              <li><a href="#">SERVICES</a></li>
-              <li><a href="#" className="contact"><button>CONTACT US</button></a></li>
+              <li><a href="/">SERVICES</a></li>
+              <li><a href="/" className="contact"><button>CONTACT US</button></a></li>
             </div>
           </div>
       </div>
