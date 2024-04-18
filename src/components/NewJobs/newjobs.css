@@ -1,0 +1,33 @@
+.outer-container{
+    height: 20rem;
+    display: grid;
+    padding: 0 3vw;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.inner-container{
+    display: grid;
+    height: 15rem;
+    /* gap: 1rem; */
+}
+.fle{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.fle button{
+    background: #ff7000;
+    color: white;
+    height: 2rem;
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+}
+.fle input{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 28rem;
+    border-bottom: 1px solid;
+    height: 2rem;
+}
