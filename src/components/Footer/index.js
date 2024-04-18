@@ -1,7 +1,10 @@
 import React from "react";
 import "./footer.css";
 import logo2 from "../../images/logo2.png";
-import socials from "../../images/Socials.png";
+// import socials from "../../images/Socials.png";
+import Badge3 from "../../images/Badge3.png"
+import Badge4 from "../../images/Badge4.png"
+import Badge5 from "../../images/Badge5.png"
 export default function Footer() {
   return (
     <div>
@@ -14,8 +17,10 @@ export default function Footer() {
             Let us help you build your dream team. Contact us today to find the
             perfect match for your company's success
           </div>
-          <div>
-            <img src={socials} alt="Socials"></img>
+          <div style={{display:"flex", gap:"1rem"}}>
+            <img src={Badge3} alt="Badge3"></img>
+            <img src={Badge4} alt="Badge4"></img>
+            <img src={Badge5} alt="Badge5"></img>
           </div>
         </div>
         <div className="right">
