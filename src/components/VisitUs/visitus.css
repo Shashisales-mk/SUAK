@@ -1,0 +1,33 @@
+.visit-main{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    gap: 2rem;
+}
+/* .v11{
+    height: 20rem;
+    display: grid;
+    gap: 1rem;
+    border-right: 1px solid;
+} */
+.v1{
+    /* display: ; */
+    gap: 1rem;
+    border-right: 1px solid;
+}
+.v1_in{
+    display: grid;
+    margin-top: 2rem;
+    /* gap: 2rem; */
+}
+.v2{
+    /* width: 20rem; */
+    display: grid;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.v2 img{
+    height: 66vh;
+    width: 35vw;
+}

@@ -1,0 +1,11 @@
+.connect-main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.lef{
+    border-right: 1px solid;
+    display: grid;
+    gap: 1rem;
+}
