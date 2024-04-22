@@ -16,8 +16,8 @@ export default function Services() {
               <img src={barchart} alt="bar-chart"></img>
             </div>
             <div className="item">
-              <div style={{ fontSize: "2rem" }}>BUSINESS PROCESS SERVICES</div>
-              <div style={{ color: "grey", width: "28rem" }}>
+              <div className="item-heading">BUSINESS PROCESS SERVICES</div>
+              <div className="item-desc">
                 Looking for high performance, cost effective and multi-cultured
                 customer engagement process or just-in-time technical support
               </div>
@@ -31,8 +31,8 @@ export default function Services() {
               <img src={businessplan} alt="business-plan"></img>
             </div>
             <div className="item">
-              <div style={{ fontSize: "2rem" }}>TALENT SERVICES</div>
-              <div style={{ color: "grey", width: "28rem" }}>
+              <div className="item-heading">TALENT SERVICES</div>
+              <div className="item-desc">
                 360 degree human capital management services with global
                 delivery experience, diverse engagement models, and dedicated
                 practices for optimizing HR operations and processes
@@ -50,8 +50,8 @@ export default function Services() {
               <img src={startup} alt="startup"></img>
             </div>
             <div className="item">
-              <div style={{ fontSize: "2rem" }}>STARTUP SERVICES</div>
-              <div style={{ color: "grey", width: "28rem" }}>
+              <div className="item-heading">STARTUP SERVICES</div>
+              <div className="item-desc">
                 We help in making your startup journeys smoother and seamless so
                 that you can focus on your vision and leave everything else on
                 us, we know execution is more critical than idea
@@ -66,8 +66,8 @@ export default function Services() {
               <img src={strategicconsulting} alt="strategic-consulting"></img>
             </div>
             <div className="item">
-              <div style={{ fontSize: "2rem" }}>CONSULTING</div>
-              <div style={{ color: "grey", width: "28rem" }}>
+              <div className="item-heading">CONSULTING</div>
+              <div className="item-desc">
                 With strong delivery mechanism and global footprints in IT
                 projects, we know we have the capabilities to expand our horizon
                 across industries.
@@ -89,7 +89,7 @@ export default function Services() {
             }}
           >
             <div>HOW YOU FIND WORK</div>
-            <div style={{ fontSize: "3.5rem" }}>
+            <div className="find-cont">
               are you a job <span style={{ color: "red" }}>seeker?</span> choose
               the appropriate option based on your needs
             </div>
@@ -106,7 +106,7 @@ export default function Services() {
               className="items-cont"
               style={{ display: "grid", gap: "3rem" }}
             >
-              <div style={{ display: "flex", gap: "2rem" }}>
+              <div className="opt-cont">
                 <div style={{ width: "13rem" }}>
                   <span style={{ textDecoration: "underline" }}>
                     apply for trending jobs
@@ -119,7 +119,7 @@ export default function Services() {
                 </div>
               </div>
 
-              <div style={{ display: "flex", gap: "2rem" }}>
+              <div className="opt-cont">
                 <div style={{ width: "13rem" }}>
                   <span style={{ textDecoration: "underline" }}>
                     submit your resume

@@ -12,8 +12,8 @@ function Aboutstart() {
         <div className="about-right">
           <ul>
             <li>ABOUT US</li>
-            <li style={{fontSize:"6rem"}}>About Suak</li>
-            <li style={{fontSize:"1.5rem", marginRight:"5rem"}}>
+            <li className="fon-title">About Suak</li>
+            <li className="fon-desc">
               At Suak, we link takent with fitting roles, empowering business to
               achieve their goals. Our approach blends management tools and
               principles within a sustainability framework: People, Planet,
@@ -23,7 +23,7 @@ function Aboutstart() {
               <button>GET IN TOUCH</button>
             </li>
             <li style={{height:"0", borderBottom:"1px solid", marginRight:"8rem"}}></li>
-            <li style={{marginRight:"8rem", fontSize:"1.2rem"}}>
+            <li className="fon2">
               We provide specialized HR solutions and recruitment services for
               the widest range of skill sets and business sectors. We have a
               global footprint that is powered by our local expertise.
@@ -31,6 +31,7 @@ function Aboutstart() {
           </ul>
         </div>
       </div>
+      <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem", margin:"3vw"}}></div>
     </div>
   );
 }

@@ -34,8 +34,8 @@ function Inquiries() {
             <div className='l2'>
                 <div style={{borderLeft:"1px solid"}}>
                     <div style={{marginLeft:"2rem", display:"grid", gap:"1rem"}}>
-                        <div style={{fontSize:"3rem"}}>GENERAL INQUIRIES</div>
-                        <div style={{marginRight:"15rem", fontSize:"1.2rem"}}>For any general questions or information about our services, feel free to reach out team at out email address or call us. We strive to respond promptly to all inquiries and look forward to assisting you.</div>
+                        <div className='fz'>GENERAL INQUIRIES</div>
+                        <div className='marsiz'>For any general questions or information about our services, feel free to reach out team at out email address or call us. We strive to respond promptly to all inquiries and look forward to assisting you.</div>
                     </div>
                 </div>
             </div>

@@ -3,12 +3,13 @@ import "./newjobs.css";
 function Newjobs() {
   return (
     <div>
+      <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem", margin:"3vw"}}></div>
       <div className="outer-container">
         <div className="inner-container">
           <div>NEW JOBS</div>
           <div>
             <ul className="fle">
-              <li style={{ width: "39rem", fontSize: "4rem" }}>
+              <li className="sz">
                 find a job that fits you. search for jobs in specific locations.
               </li>
               <ul

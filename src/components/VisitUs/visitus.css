@@ -31,3 +31,36 @@
     height: 66vh;
     width: 35vw;
 }
+.img-siz{
+    width: 3rem;
+}
+.title-siz{
+    font-size: 1.7rem;
+    margin-top: 1rem;
+}
+.desc-siz{
+    margin-right: 3rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    /* For tabs */
+    .img-siz img{
+        width: 3rem;
+    }
+    .title-siz{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    .desc-siz{
+        margin-right: 3rem;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+    }
+    .v2 img{
+        height: 25vh;
+        width: auto;
+    }
+}

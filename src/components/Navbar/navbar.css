@@ -37,3 +37,17 @@
 .contact button:hover{
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 480px) {
+    /* For mobiles */
+    .nav {
+        /* display: none; */
+    }
+}
+@media only screen and (max-width: 786px) {
+    /* For tabs */
+    .nav {
+        /* display: none; */
+    }
+}

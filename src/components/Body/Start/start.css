@@ -12,13 +12,13 @@
 }
 .start2{
     width: 50%;
-    display: grid;
-    justify-content: center;
+    display: flex;
+    justify-content: end;
     align-items: center;
 }
 .box{
-    height: 25rem;
-    width: 38rem;
+    height: 24rem;
+    width: 37rem;
     overflow: hidden;
     border-radius: 15px;
 }
@@ -45,4 +45,70 @@
     border-radius: 5px;
     color: white;
     font-size: 20px;
+}
+
+@media only screen and (max-width: 1240px) {
+    /* For mobiles */
+    .box{
+        height: 16rem;
+        width: 25rem;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .box img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .gap .a{
+        font-size: 1rem;
+    }
+    .gap .b{
+        font-size: 3rem;
+    }
+    .gap button{
+        background: #ff7000;
+        height: 2.5rem;
+        width: 10rem;
+        border: 0px;
+        border-radius: 5px;
+        color: white;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    /* For mobiles */
+    .box{
+        height: 14rem;
+        width: 22rem;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .box img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .gap .a{
+        font-size: 1rem;
+    }
+    .gap .b{
+        font-size: 2.6rem;
+    }
+    .gap button{
+        background: #ff7000;
+        height: 2.5rem;
+        width: 10rem;
+        border: 0px;
+        border-radius: 5px;
+        color: white;
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    /* For tabs */
+    .whole_container {
+        display: none;
+    }
 }

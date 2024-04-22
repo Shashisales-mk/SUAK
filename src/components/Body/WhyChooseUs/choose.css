@@ -5,6 +5,37 @@
     font-size: 2rem;
     margin: 2rem;
 }
+.contai{
+    display: flex;
+    padding: 0 3vw;
+}
+.contai-right{
+    display: grid;
+}
+.contai-right ul{
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+.contai-right-1{
+    display: flex;
+    gap: 2rem;
+}
+.contai-right-2{
+    display: flex;
+    gap: 2rem;
+}
+.siz1{
+    font-size: 2rem;
+}
+.siz2{
+    font-size: 1.2rem;
+}
+
+
+
+
+
 .container{
     border-top: 1px solid;
     margin: 3vw;
@@ -49,4 +80,61 @@
     height: 2rem;
     color: white;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+    /* For mobiles */
+    .img2{
+        height: 23rem;
+        width: 25rem;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .img2 img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    /* For mobiles */
+    .img2{
+        height: 18rem;
+        width: 20rem;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .img2 img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .siz2{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobiles */
+    .img2{
+        height: 17rem;
+        width: 20rem;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .img2 img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .siz2{
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 480px) {
+    /* For tabs */
+    .whole_container {
+        display: none;
+    }
 }

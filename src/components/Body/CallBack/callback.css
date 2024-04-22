@@ -1,0 +1,38 @@
+.callback-main{
+    display: flex;
+    padding: 0 3vw;
+}
+.callback-left{
+    display: grid;
+    gap: 1rem;
+    width: 40%;
+}
+.callback-right{
+    display: grid;
+    gap: 1rem;
+    width: 60%;
+}
+.fonsiz1{
+    font-size: 2rem;
+}
+.fonsiz2{
+    font-size: 2.7rem;
+}
+.callback-right button{
+    height: 2.2rem;
+    width: 12rem;
+    color: white;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobiles */
+    .fonsiz1 {
+        font-size: 1.7rem;
+    }
+    .fonsiz2 {
+        font-size: 2.4rem;
+    }
+}
