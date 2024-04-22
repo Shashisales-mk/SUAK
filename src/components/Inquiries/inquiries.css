@@ -44,3 +44,21 @@
         font-size: 2.6rem;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    /* For tabs */
+    .marsiz{
+        margin-right: 1rem;
+        font-size: 0.7rem;
+    }
+    .fz{
+        font-size: 1.4rem;
+    }
+    .gre{
+        color: grey;
+        font-size: 0.5rem;
+    }
+    .h-d{
+        font-size: 0.5rem;
+    }
+}

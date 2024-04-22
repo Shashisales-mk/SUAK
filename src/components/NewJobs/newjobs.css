@@ -84,3 +84,38 @@
         font-size: 1.5rem;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    /* For mobiles */
+    .fle input{
+        border: none;
+        outline: none;
+        font-size: 0.6rem;
+        width: 7rem;
+        border-bottom: 1px solid;
+        height: 2rem;
+    }
+    .sz{
+        width: 10rem;
+        font-size: 0.8rem;
+    }
+    .fs{
+        font-size: 0.4rem;
+    }
+    .fle button{
+        background: #ff7000;
+        color: white;
+        height: 1.5rem;
+        font-size: 0.6rem;
+        width: 5rem;
+        border: none;
+        border-radius: 5px;
+    }
+    .inner-container{
+        display: grid;
+        gap: 0.5rem;
+        /* height: 15rem; */
+        /* margin-bottom: 3vw; */
+        /* gap: 1rem; */
+    }
+}

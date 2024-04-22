@@ -64,3 +64,40 @@
         width: auto;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    
+
+    .visit-main{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        /* gap: 1rem; */
+    }
+    .v1{
+        width: 50%;
+        border-right: 1px solid;
+    }
+    .v2{
+        width: 50%;
+        display: grid;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+    .img-siz img{
+        width: 2rem;
+    }
+    .title-siz{
+        font-size: 1rem;
+        margin-top: 0.3rem;
+    }
+    .desc-siz{
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+        font-size: 0.6rem;
+    }
+    .v2 img{
+        height: 20vh;
+        width: 10rem;
+    }
+}

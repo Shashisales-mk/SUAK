@@ -8,25 +8,25 @@ function Inquiries() {
                 <div>
                     <ul>
                         <li className='gre'>Email</li>
-                        <li>=</li>
+                        <li className='h-d'>=</li>
                     </ul>
                 </div>
                 <div>
                     <ul>
                             <li className='gre'>PHONE NUMBER</li>
-                            <li>57893458690</li>
+                            <li className='h-d'>57893458690</li>
                     </ul>
                 </div>
                 <div>
                     <ul>
                             <li className='gre'>ADDRESS</li>
-                            <li>RR-2 VIPIN GARDEN , DWARKA.DELHI</li>
+                            <li className='h-d'>RR-2 VIPIN GARDEN , DWARKA.DELHI</li>
                     </ul>
                 </div>
                 <div>
                     <ul>
                             <li className='gre'>WEBSITE</li>
-                            <li>www.suak.io</li>
+                            <li className='h-d'>www.suak.io</li>
                     </ul>
                 </div>
             </div>

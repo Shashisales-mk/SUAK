@@ -44,7 +44,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="sec">
+        <div className="sec" style={{marginBottom:"3vw"}}>
           <div className="services-items border-right">
             <div>
               <img src={startup} alt="startup"></img>
@@ -78,10 +78,11 @@ export default function Services() {
             </div>
           </div>
         </div>
-
+{/* ----------------------------------------------------------------------------------------------------- */}
+        <div className="dis">
         <div className="sec">
           <div
-            className="services-items"
+            className="services-items2"
             style={{
               borderRight: "1.5px solid",
               display: "grid",
@@ -95,7 +96,7 @@ export default function Services() {
             </div>
           </div>
           <div
-            className="services-items"
+            className="services-items2"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -133,6 +134,46 @@ export default function Services() {
               </div>
             </div>
           </div>
+        </div>
+        <div style={{height:"0", borderBottom:"1px solid", marginTop:"3vw", marginBottom:"3vw"}}></div>
+        </div>
+        {/* --------------------------------------------------------------------------------------------------- */}
+        <div className="dis-non">
+        <div style={{height:"0", borderBottom:"1px solid", marginTop:"3vw", marginBottom:"3vw"}}></div>
+        <div className="seeker-cont">
+            <div>How You Find Work</div>
+            <div className="f-size">
+            are you a job <span style={{ color: "red" }}>seeker?</span> choose
+              the appropriate option based on your needs
+            </div>
+            <div style={{height:"0", borderBottom:"1px solid", marginTop:"1vw", marginBottom:"0vw"}}></div>
+            <div className="opt-cont">
+                <div className="w-c">
+                  <span className="f-s" style={{ textDecoration: "underline" }}>
+                    apply for trending jobs
+                  </span>
+                </div>
+                <div className="w-c">
+                  <span className="f-s" style={{ textDecoration: "underline" }}>
+                    view all current job openings
+                  </span>
+                </div>
+              </div>
+            
+              <div className="opt-cont">
+                <div className="w-c">
+                  <span className="f-s" style={{ textDecoration: "underline" }}>
+                    submit your resume
+                  </span>
+                </div>
+                <div className="w-c">
+                  <span className="f-s" style={{ textDecoration: "underline" }}>
+                    refer a freind
+                  </span>
+                </div>
+              </div>
+        </div>
+        <div style={{height:"0", borderBottom:"1px solid", marginTop:"3vw", marginBottom:"3vw"}}></div>
         </div>
       </div>
     </div>

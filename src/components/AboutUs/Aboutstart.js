@@ -22,7 +22,7 @@ function Aboutstart() {
             <li>
               <button>GET IN TOUCH</button>
             </li>
-            <li style={{height:"0", borderBottom:"1px solid", marginRight:"8rem"}}></li>
+            <li style={{height:"0", borderBottom:"1px solid", marginRight:"3vw"}}></li>
             <li className="fon2">
               We provide specialized HR solutions and recruitment services for
               the widest range of skill sets and business sectors. We have a

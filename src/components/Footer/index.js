@@ -11,27 +11,27 @@ export default function Footer() {
       <div className="main-container">
         <div className="left">
           <div>
-            <img src={logo2} alt="logo2"></img>
+            <img src={logo2} alt="logo2" className="logo2"></img>
           </div>
-          <div style={{marginRight:"2rem"}}>
+          <div className="foot-desc" style={{marginRight:"2rem"}}>
             Let us help you build your dream team. Contact us today to find the
             perfect match for your company's success
           </div>
           <div style={{display:"flex", gap:"1rem"}}>
-            <img src={Badge3} alt="Badge3"></img>
-            <img src={Badge4} alt="Badge4"></img>
-            <img src={Badge5} alt="Badge5"></img>
+            <img className="badge-w" src={Badge3} alt="Badge3"></img>
+            <img className="badge-w" src={Badge4} alt="Badge4"></img>
+            <img className="badge-w" src={Badge5} alt="Badge5"></img>
           </div>
         </div>
         <div className="right">
           <div className="pages">
-            <div>Pages</div>
+            <div className="fsze">Pages</div>
             <div className="styl">HOME</div>
             <div className="styl">ABOUT US</div>
             <div className="styl">CONTACT US</div>
           </div>
           <div className="pages footer-services">
-            <div>Service</div>
+            <div className="fsze">Service</div>
             <div className="styl">BUSINESS PROCESS SERVICES</div>
             <div className="styl">TALENT SERVICES</div>
             <div className="styl">STARTUP SERVICES</div>

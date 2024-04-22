@@ -33,3 +33,35 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .logo2{
+        width: 2rem;
+    }
+    .badge-w{
+        width: 1rem;
+        height: 1rem;
+    }
+    .foot-desc{
+        margin-right: 0rem;
+        font-size: 0.6rem;
+    }
+    .right{
+        width: 50%;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        display: flex;
+        gap: 2rem;
+    }
+    .pages{
+        display: grid;
+        gap: 1rem;
+    }
+    .styl{
+        font-size: 0.4rem;
+        color: grey;
+    }
+    .fsze{
+        font-size: 0.7rem;
+    }
+}

@@ -15,6 +15,10 @@
 .fonzi2{
     font-size: 1.7rem;
     margin-right: 2rem;
+    color: grey;
+}
+.w-i{
+    width: 22rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -59,5 +63,23 @@
     }
     .fonzi2{
         font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    /* For tabs */
+    .lef {
+        border-right: 1px solid;
+        display: grid;
+        gap: 0rem;
+    }
+    .fonzi {
+        font-size: 1.6rem;
+    }
+    .fonzi2{
+        font-size: 0.8rem;
+    }
+    .w-i{
+        width: 11rem;
     }
 }

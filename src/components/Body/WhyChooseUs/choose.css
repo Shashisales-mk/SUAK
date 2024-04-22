@@ -33,6 +33,19 @@
 }
 
 
+.mgn-lin-1{
+    width: 0;
+    border-left: 1px solid;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.mgn-lin-2{
+    height: 0;
+    border-bottom: 1px solid;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
 
 
@@ -80,6 +93,9 @@
     height: 2rem;
     color: white;
     border-radius: 5px;
+}
+.badge-sze{
+    width: 2rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -132,9 +148,59 @@
         font-size: 1rem;
     }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     /* For tabs */
-    .whole_container {
-        display: none;
+    .heading2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+    .img2{
+        height: auto;
+        width: auto;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .img2 img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .siz1{
+        font-size: 1rem;
+    }
+    .siz2{
+        font-size: 0.5rem;
+    }
+    .badge-sze{
+        width: 1rem;
+    }
+    .contai-left{
+        width: 50%;
+    }
+    .contai-right{
+        width: 50%;
+    }
+    .contai-right-1{
+        display: flex;
+        gap: 1rem;
+    }
+    .contai-right-2{
+        display: flex;
+        gap: 1rem;
+    }
+    .mgn-lin-1{
+        width: 0;
+        border-left: 1px solid;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .mgn-lin-2{
+        height: 0;
+        border-bottom: 1px solid;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }

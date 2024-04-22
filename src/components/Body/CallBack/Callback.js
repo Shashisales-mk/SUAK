@@ -6,7 +6,7 @@ function Callback() {
       <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem", margin:"3vw"}}></div>
       <div className='callback-main'>
           <div className='callback-left'>
-            <div>HOW WE WORK</div>
+            <div className='fonsiz'>HOW WE WORK</div>
             <div className='fonsiz1'>Looking For The Right Talent For Your Organization?</div>
           </div>
           <div style={{width:"0", borderLeft:"1.5px solid", marginLeft:"2rem", marginRight:"2rem"}}></div>

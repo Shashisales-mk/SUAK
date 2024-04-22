@@ -78,3 +78,25 @@
         color: black;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    /* For mobiles */
+    .part2 img{
+        height: auto;
+        width: 44vw;
+    }
+    .part1 ul{
+        display: grid;
+        gap: 1rem;
+        list-style: none;
+        font-size: 1.1rem;
+        color: grey;
+    }
+    .sze{
+        font-size: 1rem;
+        color: black;
+    }
+    .d-sz{
+        font-size: 0.6rem;
+    }
+}

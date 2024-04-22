@@ -14,10 +14,10 @@ export default function Choose() {
             <img src={home_b} alt="home_b"></img>
           </div>
         </div>
-        <div style={{width:"0", borderLeft:"1px solid", marginLeft:"2rem", marginRight:"2rem"}}></div>
+        <div className="mgn-lin-1"></div>
         <div className="contai-right">
           <div className="contai-right-1">
-            <div><img src={badge1} alt="badge1" style={{ width: "2rem" }}></img></div>
+            <div><img src={badge1} alt="badge1" className="badge-sze"></img></div>
             <div>
               <ul>
                 <li className="siz1">VISION</li>
@@ -29,10 +29,10 @@ export default function Choose() {
             </div>
           </div>
 
-          <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+          <div className="mgn-lin-2"></div>
 
           <div className="contai-right-2">
-            <div><img src={badge2} alt="badge2" style={{ width: "2rem" }}></img></div>
+            <div><img src={badge2} alt="badge2" className="badge-sze"></img></div>
             <div>
               <ul>
                   <li className="siz1">INNOVATION</li>

@@ -7,7 +7,7 @@ export default function Navbar() {
       <div>
           <div className="nav">
             <div className="nav1">
-                <div className="logo" style={{listStyle: "none"}}><li><Link to="/"><img src={logo} alt="logo" style={{width:"8rem"}}></img></Link></li></div>
+                <div className="logo" style={{listStyle: "none"}}><li><Link to="/"><img src={logo} alt="logo" className="logo"></img></Link></li></div>
             </div>
             <div className="nav2">
               <li><Link to="/about">ABOUT US</Link></li>
