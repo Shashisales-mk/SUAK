@@ -30,6 +30,7 @@
 }
 .siz2{
     font-size: 1.2rem;
+    color: grey;
 }
 
 
@@ -128,6 +129,7 @@
     }
     .siz2{
         font-size: 1rem;
+        color: grey;
     }
 }
 
@@ -146,6 +148,7 @@
     }
     .siz2{
         font-size: 1rem;
+        color: grey;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -173,6 +176,7 @@
     }
     .siz2{
         font-size: 0.5rem;
+        color: grey;
     }
     .badge-sze{
         width: 1rem;

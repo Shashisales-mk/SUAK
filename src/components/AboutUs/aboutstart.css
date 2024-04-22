@@ -24,10 +24,12 @@
 .fon-desc{
     font-size: 1.5rem;
     margin-right: 5rem;
+    color: grey;
 }
 .fon2{
     font-size: 1.2rem;
     margin-right: 8rem;
+    color: grey;
 }
 .about-right ul{
     margin-top: 2rem;
@@ -76,10 +78,12 @@
     .fon-desc{
         font-size: 1.3rem;
         margin-right: 3rem;
+        color: grey;
     }
     .fon2{
         font-size: 1.1rem;
         margin-right: 4rem;
+        color: grey;
     }
 }
 
@@ -104,10 +108,12 @@
     .fon-desc{
         font-size: 1.3rem;
         margin-right: 3rem;
+        color: grey;
     }
     .fon2{
         font-size: 1.1rem;
         margin-right: 4rem;
+        color: grey;
     }
 }
 
@@ -133,8 +139,10 @@
     .fon-desc{
         font-size: 0.7rem;
         margin-right: 2rem;
+        color: grey;
     }
     .fon2{
+        color: grey;
         font-size: 0.6rem;
         margin-right: 1rem;
     }
