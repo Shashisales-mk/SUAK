@@ -91,7 +91,7 @@ export default function Services() {
           >
             <div>HOW YOU FIND WORK</div>
             <div className="find-cont">
-              are you a job <span style={{ color: "ff7000" }}>seeker?</span> choose
+              are you a job <span style={{ color: "#ff7000" }}>seeker?</span> choose
               the appropriate option based on your needs
             </div>
           </div>
