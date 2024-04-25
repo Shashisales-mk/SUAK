@@ -145,11 +145,11 @@
     .asd{
         display: flex;
         justify-content: center;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .hed-siz {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         margin-bottom: 0.3rem;
     }
     .desc-siz{
@@ -179,7 +179,7 @@
         width: 11rem;
     }
     .stu-l .hed-siz{
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         margin-bottom: 0.2rem;
     }
     .stu-l .desc-size{
