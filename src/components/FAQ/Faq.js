@@ -20,36 +20,36 @@ function Faq() {
             <div className='faq-right'>
                 <div>
                     <div className='ri1'>
-                        <div className='fon-bold'>How long does the branding process usually take?</div>
+                        <div className='fon-bold fs106'>How long does the branding process usually take?</div>
                         <div><img src={faq1} alt='faq1'></img></div>
                     </div>
                     <div className='hed-m'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Tincidunt vitae semper quis lectus nulla at volutpat diam ut.</div>
                 </div>
-                <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+                <div className='bor-lin'></div>
 
                 <div>
                     <div className='ri1'>
-                            <div className='fon-bold'>What is the importance of branding for a business?</div>
+                            <div className='fon-bold fs106'>What is the importance of branding for a business?</div>
                             <div><img src={faq1} alt='faq1'></img></div>
                         </div>
                         <div className='hed-m'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Tincidunt vitae semper quis lectus nulla at volutpat diam ut.</div>
                 </div>
 
-                <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+                <div className='bor-lin'></div>
 
                 <div>
                     <div className='ri1'>
-                            <div className='fon-bold'>Can you help with both visual design and brand strategy?</div>
+                            <div className='fon-bold fs106'>Can you help with both visual design and brand strategy?</div>
                             <div><img src={faq1} alt='faq1'></img></div>
                         </div>
                         <div className='hed-m'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Tincidunt vitae semper quis lectus nulla at volutpat diam ut.</div>
                 </div>
 
-                <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+                <div className='bor-lin'></div>
 
                 <div>
                     <div className='ri1'>
-                            <div className='fon-bold'>How involved will I be in the branding process?</div>
+                            <div className='fon-bold fs106'>How involved will I be in the branding process?</div>
                             <div><img src={faq1} alt='faq1'></img></div>
                         </div>
                         <div className='hed-m'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Tincidunt vitae semper quis lectus nulla at volutpat diam ut.</div>

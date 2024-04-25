@@ -44,6 +44,16 @@
 
 @media only screen and (max-width: 600px) {
     /* For mobiles */
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        z-index: 1;
+        width: 100%;
+        padding: 0 3vw;
+        border-bottom: 1.5px solid grey;
+    }
     .logo{
         width: 4rem;
     }

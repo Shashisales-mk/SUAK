@@ -12,7 +12,7 @@ function Motto() {
                     <button>SEEKER</button>
                 </div>
             </div>
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
         </div>
     </div>
   )

@@ -47,3 +47,91 @@
 .hed-lg{
     font-size: 5rem;
 }
+.bor-lin{
+    height: 0px;
+    border-bottom: 1px solid;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.fs106{
+    font-size: 1;
+}
+
+@media only screen and (max-width: 1024px) {
+    .hed-lg {
+        font-size: 3rem;
+    }
+}
+.faq-left button {
+    height: 2.5rem;
+    width: 10rem;
+    background: orange;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+@media only screen and (max-width: 820px) {
+    .hed-lg {
+        font-size: 2.5rem;
+    }
+    .faq-left button {
+        height: 2.5rem;
+        width: 10rem;
+        background: orange;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .hed-m{
+        /* display: none; */
+        font-size: 0.7rem;
+        color: grey;
+        line-height: 1.5;
+    }
+    .bor-lin{
+        height: 0px;
+        border-bottom: 1px solid;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .hed-sm{
+        font-size: 0.4rem;
+    }
+    .hed-lg {
+        font-size: 1.3rem;
+    }
+    .faq-left button {
+        height: 1.5rem;
+        width: 5rem;
+        font-size: 0.5rem;
+        background: orange;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .hed-m{
+        /* display: none; */
+        font-size: 0.4rem;
+        color: grey;
+        line-height: 1.5;
+    }
+    .ri1 img {
+        width: 0.7rem;
+    }
+    .bor-lin{
+        height: 0px;
+        border-bottom: 1px solid;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .fs106{
+        font-size: 0.6rem;
+    }
+}

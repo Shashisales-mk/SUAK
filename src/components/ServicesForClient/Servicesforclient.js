@@ -4,9 +4,9 @@ function Servicesforclient() {
   return (
     <div>
         <div className='serv-cont'>
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
             <div className='asd'>Our Services For Client</div>
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
 
             <div className='serv-inner-cont'>
                 <div className='hiring-card'>
@@ -32,7 +32,7 @@ function Servicesforclient() {
                 </div>
             </div>
                 
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
 
             <div className='serv-inner-cont'>
                 <div className='hiring-card'>

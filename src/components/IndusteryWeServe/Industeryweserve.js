@@ -12,11 +12,11 @@ function Industeryweserve() {
   return (
     <div>
         <div className='industry-comp'>
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
 
                 <div className='asd'>Industry We Serve</div>
 
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
 
             <div className='industry-in-cont fs13'>
                 <div className='dis-gri'>
@@ -37,7 +37,7 @@ function Industeryweserve() {
                 </div>
             </div>
 
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
 
             <div className='industry-in-cont fs13'>
                 <div className='dis-gri'>
@@ -58,7 +58,7 @@ function Industeryweserve() {
                 </div>
             </div>
 
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"2rem", marginBottom:"2rem"}}></div>
+            <div className='bor-lin'></div>
         </div>
     </div>
   )
