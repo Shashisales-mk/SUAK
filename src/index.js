@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Servicespage from './pages/Servicespage';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact/>,
+  },
+  {
+    path: "services",
+    element: <Servicespage/>,
   },
 ]);
 

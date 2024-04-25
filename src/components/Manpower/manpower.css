@@ -1,0 +1,31 @@
+.manpower-cont{
+    display: grid;
+    gap: 1rem;
+    padding: 0vw 3vw 0vw 3vw;
+}
+.manpower-cont-2{
+    font-size: 3rem;
+}
+.manpower-cont-3{
+    display: flex;
+}
+.m-left{
+    width: 50%;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: grey;
+    display: flex;
+    align-items: center;
+}
+.m-left p{
+    margin-right: 20px;
+}
+.m-right{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+}
+.m-right img{
+    height: 100%;
+    width: 100%;
+}

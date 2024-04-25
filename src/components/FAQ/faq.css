@@ -1,0 +1,49 @@
+.faq-cont{
+    padding: 0 3vw;
+    display: flex;
+}
+.faq-left{
+    width: 30%;
+    display: grid;
+    justify-content: space-between;
+}
+.faq-left button{
+    height: 2.5rem;
+    width: 15rem;
+    background: orange;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.bt{
+    /* display: grid;
+    justify-content: end; */
+}
+.faq-right{
+    width: 70%;
+}
+.ri1{
+    display: flex;
+    justify-content: space-between;
+}
+.ri1 img{
+    width: 1.5rem;
+}
+.fon-bold{
+    font-weight: bold;
+}
+
+.hed-sm{
+    font-size: 0.6rem;
+    color: grey;
+}
+.hed-m{
+    display: none;
+    font-size: 0.9rem;
+    color: grey;
+    line-height: 1.5;
+}
+.hed-lg{
+    font-size: 5rem;
+}

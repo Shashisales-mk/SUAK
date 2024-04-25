@@ -1,0 +1,34 @@
+.motto-container{
+    padding: 3vw 3vw 0vw 3vw;
+    display: grid;
+    gap: 1rem;
+}
+.motto1{
+    font-size: 4.5rem;
+    width: 50%;
+}
+.motto2{
+    display: flex;
+    justify-content: space-between;
+}
+.motto3{
+    width: 70%;
+    font-size: 1.5rem;
+    padding: 0 17rem 0px 0px;
+}
+.motto4{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.motto4 button{
+    width: 11rem;
+    height: 2rem;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.motto4 button:hover{
+    cursor: pointer;
+}

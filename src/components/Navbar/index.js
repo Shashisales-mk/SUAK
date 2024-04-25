@@ -12,7 +12,7 @@ export default function Navbar() {
             <div className="nav2">
               <li><Link to="/about">ABOUT US</Link></li>
               {/* <li><a href="/about">ABOUT US</a></li> */}
-              <li><a href="/">SERVICES</a></li>
+              <li><a href="/services">SERVICES</a></li>
               <li><Link to="/contact" className="contact"><button>CONTACT US</button></Link></li>
               {/* <li><a href="/contact" className="contact"><button>CONTACT US</button></a></li> */}
             </div>
