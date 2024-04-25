@@ -10,7 +10,7 @@
 .faq-left button{
     height: 2.5rem;
     width: 15rem;
-    background: orange;
+    background: #ff7000;
     font-weight: bold;
     color: white;
     border: none;
@@ -65,7 +65,7 @@
 .faq-left button {
     height: 2.5rem;
     width: 10rem;
-    background: orange;
+    background: #ff7000;
     font-weight: bold;
     color: white;
     border: none;
@@ -78,7 +78,7 @@
     .faq-left button {
         height: 2.5rem;
         width: 10rem;
-        background: orange;
+        background: #ff7000;
         font-weight: bold;
         color: white;
         border: none;
@@ -110,7 +110,7 @@
         height: 1.5rem;
         width: 5rem;
         font-size: 0.5rem;
-        background: orange;
+        background: #ff7000;
         font-weight: bold;
         color: white;
         border: none;
