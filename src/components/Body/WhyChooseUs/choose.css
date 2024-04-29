@@ -9,7 +9,11 @@
     display: flex;
     padding: 0 3vw;
 }
+.contai-left{
+    width: 50%;
+}
 .contai-right{
+    width: 50%;
     display: grid;
 }
 .contai-right ul{
@@ -29,7 +33,7 @@
     font-size: 2rem;
 }
 .siz2{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: grey;
 }
 
@@ -44,8 +48,8 @@
 .mgn-lin-2{
     height: 0;
     border-bottom: 1px solid;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -70,14 +74,14 @@
     border-right: 1px solid grey;
 }
 .img2{
-    height: 25rem;
-    width: 34rem;
+    height: 80vh;
+    width: 100%;
     border-radius: 5px;
     overflow: hidden;
 }
 .img2 img{
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
 }
 .box2{
@@ -102,33 +106,40 @@
 @media only screen and (max-width: 1024px) {
     /* For mobiles */
     .img2{
-        height: 23rem;
-        width: 25rem;
+        height: 100%;
+        width: 100%;
         border-radius: 5px;
         overflow: hidden;
     }
     .img2 img{
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
+    }
+    .siz1 {
+        font-size: 1.2rem;
+    }
+    .siz2{
+        font-size: 1.2rem;
+        color: grey;
     }
 }
 
 @media only screen and (max-width: 820px) {
     /* For mobiles */
     .img2{
-        height: 18rem;
-        width: 20rem;
+        height: 100%;
+        width: 100%;
         border-radius: 5px;
         overflow: hidden;
     }
     .img2 img{
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
     }
     .siz2{
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: grey;
     }
 }
@@ -136,18 +147,18 @@
 @media only screen and (max-width: 768px) {
     /* For mobiles */
     .img2{
-        height: 17rem;
-        width: 20rem;
+        height: 100%;
+        width: 100%;
         border-radius: 5px;
         overflow: hidden;
     }
     .img2 img{
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
     }
     .siz2{
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: grey;
     }
 }
@@ -161,21 +172,21 @@
         margin: 1vw;
     }
     .img2{
-        height: auto;
-        width: auto;
+        height: 100%;
+        width: 100%;
         border-radius: 5px;
         overflow: hidden;
     }
     .img2 img{
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
     }
     .siz1{
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     .siz2{
-        font-size: 0.5rem;
+        font-size: 0.4rem;
         color: grey;
     }
     .badge-sze{
@@ -186,6 +197,11 @@
     }
     .contai-right{
         width: 50%;
+    }
+    .contai-right ul {
+        list-style: none;
+        display: grid;
+        gap: 0.2rem;
     }
     .contai-right-1{
         display: flex;
