@@ -21,6 +21,7 @@
     padding: 0 1rem 0px 0px;
 }
 .motto4{
+    padding: 1.2rem 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
     justify-content: end;
@@ -95,6 +96,7 @@
         padding: 0 1rem 0px 0px;
     }
     .motto4{
+        padding: 1.2rem 0;
         display: grid;
         grid-template-rows: auto 1fr auto;
         justify-content: end;
