@@ -15,10 +15,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-}
-.bt{
-    /* display: grid;
-    justify-content: end; */
+    margin-top: 1rem;
 }
 .faq-right{
     width: 70%;
@@ -42,13 +39,12 @@
     color: grey;
 }
 .hed-m{
-    /* display: none; */
     font-size: 0.9rem;
     color: grey;
     line-height: 1.5;
 }
 .hed-lg{
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .bor-lin{
     height: 0px;
@@ -88,7 +84,6 @@
         border-radius: 5px;
     }
     .hed-m{
-        /* display: none; */
         font-size: 0.7rem;
         color: grey;
         line-height: 1.5;
@@ -120,7 +115,6 @@
         border-radius: 5px;
     }
     .hed-m{
-        /* display: none; */
         font-size: 0.4rem;
         color: grey;
         line-height: 1.5;

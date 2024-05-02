@@ -6,12 +6,11 @@ function Aboutstart() {
     <div>
       <div className="about-main-container">
         <div className="about-left">
-          <img src={about_a} alt="about_a"></img>
+          <img src={about_a} loading="lazy" alt="about_a"></img>
         </div>
 
         <div className="about-right">
           <ul>
-            <li>ABOUT US</li>
             <li className="fon-title">About Suak</li>
             <li className="fon-desc">
               At Suak, we link takent with fitting roles, empowering business to

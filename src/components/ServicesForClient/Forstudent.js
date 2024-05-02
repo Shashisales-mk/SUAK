@@ -31,7 +31,7 @@ function Forstudent() {
         <div className='stu-2'>
           <div className='fs3'>FOR STUDENT</div>
           <div>
-            <img src={ser1} alt='ser1'></img>
+            <img src={ser1} loading="lazy" alt='ser1'></img>
           </div>
         </div>
       </div>

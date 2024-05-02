@@ -10,7 +10,7 @@ function Connect() {
                 <span className='fonzi' style={{color: "#ff7000" }}>SUAK</span>
                 <div className='fonzi2'>Thank you for considering our services. Whether you are a job seeker looking for apportunities or a company seeking talent, we're here to assist you. Please find the relevant contact informaation below for your inquiries:</div>
             </div>
-            <div className='rig'><img src={contact_a} alt='contact_a' className='w-i'></img></div>
+            <div className='rig'><img src={contact_a} loading="lazy" alt='contact_a' className='w-i'></img></div>
         </div>
     </div>
   )

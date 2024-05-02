@@ -9,6 +9,10 @@
     display: grid;
     gap: 1.5rem;
 }
+.left img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
 .right{
     width: 50%;
     margin-left: 2rem;
@@ -25,7 +29,6 @@
     color: grey;
 }
 .footer-copyright{
-    /* gap: 53rem; */
     height: 2rem;
     margin: 3vw;
     border-top: 1px solid;
@@ -35,6 +38,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .left img{
+        width: 1rem;
+        height: 1rem;
+    }
     .logo2{
         width: 2rem;
     }

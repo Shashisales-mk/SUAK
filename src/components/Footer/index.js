@@ -1,26 +1,25 @@
 import React from "react";
 import "./footer.css";
 import logo2 from "../../images/logo2.png";
-// import socials from "../../images/Socials.png";
-import Badge3 from "../../images/Badge3.png"
-import Badge4 from "../../images/Badge4.png"
-import Badge5 from "../../images/Badge5.png"
+import Badge3 from "../../images/Badge-3.png"
+import Badge4 from "../../images/Badge-4.png"
+import Badge5 from "../../images/Badge-5.png"
 export default function Footer() {
   return (
     <div>
       <div className="main-container">
         <div className="left">
           <div>
-            <img src={logo2} alt="logo2" className="logo2"></img>
+            <img src={logo2} loading="lazy" alt="logo2" className="logo2"></img>
           </div>
           <div className="foot-desc" style={{marginRight:"2rem"}}>
             Let us help you build your dream team. Contact us today to find the
             perfect match for your company's success
           </div>
           <div style={{display:"flex", gap:"1rem"}}>
-            <img className="badge-w" src={Badge3} alt="Badge3"></img>
-            <img className="badge-w" src={Badge4} alt="Badge4"></img>
-            <img className="badge-w" src={Badge5} alt="Badge5"></img>
+            <img className="badge-w" loading="lazy" src={Badge3} alt="Badge3"></img>
+            <img className="badge-w" loading="lazy" src={Badge4} alt="Badge4"></img>
+            <img className="badge-w" loading="lazy" src={Badge5} alt="Badge5"></img>
           </div>
         </div>
         <div className="right">

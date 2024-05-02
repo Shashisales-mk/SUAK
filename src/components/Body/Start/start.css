@@ -17,25 +17,26 @@
     align-items: center;
 }
 .box{
-    height: 24rem;
-    width: 37rem;
+    height: 20rem;
+    width: 90%;
     overflow: hidden;
     border-radius: 15px;
 }
 .box img{
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
 }
 .gap{
     display: grid;
     gap: 10px;
+    width: 100%;
 }
 .gap .a{
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 .gap .b{
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .gap button{
     background: #ff7000;
@@ -47,11 +48,10 @@
     font-size: 20px;
 }
 
-@media only screen and (max-width: 1240px) {
-    /* For mobiles */
+@media only screen and (max-width: 1024px) {
     .box{
-        height: 16rem;
-        width: 25rem;
+        height: 100%;
+        width: 90%;
         overflow: hidden;
         border-radius: 15px;
     }
@@ -78,10 +78,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobiles */
     .box{
-        height: 14rem;
-        width: 22rem;
+        height: 100%;
+        width: 90%;
         overflow: hidden;
         border-radius: 15px;
     }
@@ -126,10 +125,10 @@
         display: block;
     }
     .gap .a{
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
     .gap .b{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .gap button{
         background: #ff7000;

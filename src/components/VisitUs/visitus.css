@@ -2,27 +2,18 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    
+    align-items: center;
     gap: 2rem;
 }
-/* .v11{
-    height: 20rem;
-    display: grid;
-    gap: 1rem;
-    border-right: 1px solid;
-} */
 .v1{
-    /* display: ; */
     gap: 1rem;
     border-right: 1px solid;
 }
 .v1_in{
     display: grid;
     margin-top: 2rem;
-    /* gap: 2rem; */
 }
 .v2{
-    /* width: 20rem; */
     display: grid;
     gap: 2rem;
     justify-content: space-between;
@@ -32,7 +23,10 @@
     width: 35vw;
 }
 .img-siz{
-    width: 3rem;
+    width: 5rem;
+}
+.img-siz img{
+    width: 100%;
 }
 .title-siz{
     font-size: 1.7rem;
@@ -47,7 +41,6 @@
 
 
 @media only screen and (max-width: 1024px) {
-    /* For tabs */
     .img-siz img{
         width: 3rem;
     }
@@ -68,21 +61,24 @@
 }
 
 @media only screen and (max-width: 600px) {
-    
-
     .visit-main{
         display: flex;
         justify-content: space-between;
         width: 100%;
-        /* gap: 1rem; */
+        align-items: center;
     }
     .v1{
         width: 50%;
         border-right: 1px solid;
     }
+    .v1_in{
+        display: grid;
+        margin-top: 1rem;
+    }
     .v2{
         width: 50%;
         display: grid;
+        height: 100%;
         gap: 2rem;
         justify-content: space-between;
     }
@@ -90,17 +86,19 @@
         width: 2rem;
     }
     .title-siz{
-        font-size: 1rem;
+        font-size: 0.8rem;
         margin-top: 0.3rem;
     }
     .desc-siz{
-        margin-right: 1rem;
-        margin-top: 0.2rem;
-        font-size: 0.6rem;
+        height: 2rem;
+        font-size: 0.4rem;
+        margin-bottom: 0.3rem;
+        margin-right: 0.3rem;
+        margin-top: 0.3rem;
         color: grey;
     }
     .v2 img{
-        height: 20vh;
+        height: auto;
         width: 10rem;
     }
 }

@@ -19,7 +19,7 @@ export default function Start() {
         </div>
         <div className="start2">
           <div className="box">
-            <img src={home_a} alt="home_a"></img>
+            <img src={home_a} loading="lazy" alt="home_a"></img>
           </div>
         </div>
       </div>

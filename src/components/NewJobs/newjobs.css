@@ -1,15 +1,9 @@
 .outer-container{
-    /* height: 20rem; */
     display: grid;
     padding: 0 3vw;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 .inner-container{
     display: grid;
-    /* height: 15rem; */
-    /* margin-bottom: 3vw; */
-    /* gap: 1rem; */
 }
 .fle{
     list-style: none;
@@ -38,7 +32,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    /* For mobiles */
     .fle input{
         border: none;
         outline: none;
@@ -54,7 +47,6 @@
 }
 
 @media only screen and (max-width: 820px) {
-    /* For mobiles */
     .fle input{
         border: none;
         outline: none;
@@ -70,7 +62,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobiles */
     .fle input{
         border: none;
         outline: none;
@@ -86,7 +77,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    /* For mobiles */
     .fle input{
         border: none;
         outline: none;
@@ -114,8 +104,5 @@
     .inner-container{
         display: grid;
         gap: 0.5rem;
-        /* height: 15rem; */
-        /* margin-bottom: 3vw; */
-        /* gap: 1rem; */
     }
 }

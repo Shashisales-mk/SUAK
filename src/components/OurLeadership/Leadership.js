@@ -15,7 +15,7 @@ function Leadership() {
                     </ul>
                 </div>
                 <div className='part2'>
-                    <img src={about_b} alt='about_b'></img>
+                    <img src={about_b} loading="lazy" alt='about_b'></img>
                 </div>
             </div>
         </div>

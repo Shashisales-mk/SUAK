@@ -8,7 +8,7 @@ function Inquiries() {
                 <div>
                     <ul>
                         <li className='gre'>Email</li>
-                        <li className='h-d'>=</li>
+                        <li className='h-d'>suakinfotech@gmail.com</li>
                     </ul>
                 </div>
                 <div>

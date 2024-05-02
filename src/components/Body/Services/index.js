@@ -11,12 +11,12 @@ export default function Services() {
         <div className="heading">Services.</div>
 
         <div className="sec">
-          <div className="services-items border-right">
+          <div className="services-items">
             <div>
-              <img src={barchart} alt="bar-chart"></img>
+              <img src={barchart} loading="lazy" alt="bar-chart"></img>
             </div>
             <div className="item">
-              <div className="item-heading">BUSINESS PROCESS SERVICES</div>
+              <div className="item-heading">BUSINESS PROCESS</div>
               <div className="item-desc">
                 Looking for high performance, cost effective and multi-cultured
                 customer engagement process or just-in-time technical support
@@ -26,9 +26,12 @@ export default function Services() {
               </div>
             </div>
           </div>
+
+          <div style={{width:"0", borderRight:"1px solid", margin:"2vw"}}></div>
+
           <div className="services-items" style={{ marginLeft: "1rem" }}>
             <div>
-              <img src={businessplan} alt="business-plan"></img>
+              <img src={businessplan} loading="lazy" alt="business-plan"></img>
             </div>
             <div className="item">
               <div className="item-heading">TALENT SERVICES</div>
@@ -45,9 +48,9 @@ export default function Services() {
         </div>
 
         <div className="sec" style={{marginBottom:"3vw"}}>
-          <div className="services-items border-right">
+          <div className="services-items">
             <div>
-              <img src={startup} alt="startup"></img>
+              <img src={startup} loading="lazy" alt="startup"></img>
             </div>
             <div className="item">
               <div className="item-heading">STARTUP SERVICES</div>
@@ -61,9 +64,13 @@ export default function Services() {
               </div>
             </div>
           </div>
+
+          <div style={{width:"0", borderRight:"1px solid", margin:"2vw"}}></div>
+
+
           <div className="services-items" style={{ marginLeft: "1rem" }}>
             <div>
-              <img src={strategicconsulting} alt="strategic-consulting"></img>
+              <img src={strategicconsulting} loading="lazy" alt="strategic-consulting"></img>
             </div>
             <div className="item">
               <div className="item-heading">CONSULTING</div>
@@ -80,7 +87,7 @@ export default function Services() {
         </div>
 {/* ----------------------------------------------------------------------------------------------------- */}
         <div className="dis">
-        <div className="sec">
+        <div className="sec" style={{borderBottom:"0"}}>
           <div
             className="services-items2"
             style={{

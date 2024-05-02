@@ -43,7 +43,6 @@
 
 
 @media only screen and (max-width: 600px) {
-    /* For mobiles */
     .nav {
         display: flex;
         justify-content: space-between;
@@ -73,11 +72,5 @@
         color: white;
         border: 0px;
         border-radius: 4px;
-    }
-}
-@media only screen and (max-width: 786px) {
-    /* For tabs */
-    .nav {
-        /* display: none; */
     }
 }

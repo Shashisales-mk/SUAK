@@ -41,11 +41,6 @@
     font-size: 1.4rem;
 }
 @media only screen and (max-width: 1100px) {
-    /* For mobiles */
-    /* .part2 img{
-        height: 30vh;
-        width: 44vw;
-    } */
     .sze{
         font-size: 4rem;
         color: black;
@@ -56,11 +51,6 @@
 }
 
 @media only screen and (max-width: 820px) {
-    /* For mobiles */
-    /* .part2 img{
-        height: 30vh;
-        width: 44vw;
-    } */
     .part1 ul{
         display: grid;
         gap: 2rem;
@@ -74,11 +64,6 @@
     }
 }
 @media only screen and (max-width: 768px) {
-    /* For mobiles */
-    /* .part2 img{
-        height: 30vh;
-        width: 44vw;
-    } */
     .part1 ul{
         display: grid;
         gap: 2rem;
@@ -93,11 +78,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    /* For mobiles */
-    /* .part2 img{
-        height: auto;
-        width: 44vw;
-    } */
     .part1 ul{
         display: grid;
         gap: 1rem;

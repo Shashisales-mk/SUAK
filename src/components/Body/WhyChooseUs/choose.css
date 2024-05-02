@@ -11,6 +11,8 @@
 }
 .contai-left{
     width: 50%;
+    display: flex;
+    align-items: center;
 }
 .contai-right{
     width: 50%;
@@ -104,7 +106,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    /* For mobiles */
     .img2{
         height: 100%;
         width: 100%;
@@ -126,7 +127,6 @@
 }
 
 @media only screen and (max-width: 820px) {
-    /* For mobiles */
     .img2{
         height: 100%;
         width: 100%;
@@ -145,7 +145,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobiles */
     .img2{
         height: 100%;
         width: 100%;
@@ -163,7 +162,6 @@
     }
 }
 @media only screen and (max-width: 600px) {
-    /* For tabs */
     .heading2{
         display: flex;
         justify-content: center;
