@@ -37,6 +37,7 @@
 .hed-sm{
     font-size: 0.6rem;
     color: grey;
+    padding: 0rem 0.3rem;
 }
 .hed-m{
     font-size: 0.9rem;
@@ -96,10 +97,19 @@
     }
 }
 
+@media only screen and (max-width: 768px){
+    .hed-sm {
+        font-size: 0.6rem;
+        color: grey;
+        padding: 0rem 0.2rem;
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     .hed-sm{
         font-size: 0.4rem;
+        padding: 0rem 0.1rem;
     }
     .hed-lg {
         font-size: 1.3rem;
