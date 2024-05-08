@@ -14,7 +14,9 @@ function Inquiries() {
                 <div>
                     <ul>
                             <li className='gre'>PHONE NUMBER</li>
-                            <li className='h-d'>57893458690</li>
+                            <li className='h-d'>7839567777  ||  7376287777  ||  8383943460</li>
+                            {/* <li className='h-d'>7376287777,</li>
+                            <li className='h-d'>8383943460</li> */}
                     </ul>
                 </div>
                 <div>
@@ -26,7 +28,7 @@ function Inquiries() {
                 <div>
                     <ul>
                             <li className='gre'>WEBSITE</li>
-                            <li className='h-d'>www.suak.io</li>
+                            <li className='h-d'>www.suak.in</li>
                     </ul>
                 </div>
             </div>
