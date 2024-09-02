@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+import { Link } from "react-router-dom";
 import logo2 from "../../images/logo2.png";
 import Badge3 from "../../images/Badge-3.png"
 import Badge4 from "../../images/Badge-4.png"
@@ -25,16 +26,16 @@ export default function Footer() {
         <div className="right">
           <div className="pages">
             <div className="fsze">Pages</div>
-            <div className="styl">HOME</div>
-            <div className="styl">ABOUT US</div>
-            <div className="styl">CONTACT US</div>
+            <div className="styl"><li><Link to="/">HOME</Link></li></div>
+            <div className="styl"><li><Link to="/about">ABOUT US</Link></li></div>
+            <div className="styl"><li><Link to="/contact">CONTACT US</Link></li></div>
           </div>
           <div className="pages footer-services">
             <div className="fsze">Service</div>
-            <div className="styl">BUSINESS PROCESS SERVICES</div>
-            <div className="styl">TALENT SERVICES</div>
-            <div className="styl">STARTUP SERVICES</div>
-            <div className="styl">CONSULTING</div>
+            <div className="styl"><li><Link to="/services">BUSINESS PROCESS SERVICES</Link></li></div>
+            <div className="styl"><li><Link to="/services">TALENT SERVICES</Link></li></div>
+            <div className="styl"><li><Link to="/services">STARTUP SERVICES</Link></li></div>
+            <div className="styl"><li><Link to="/services">CONSULTING</Link></li></div>
           </div>
         </div>
       </div>

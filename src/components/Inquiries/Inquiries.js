@@ -15,8 +15,6 @@ function Inquiries() {
                     <ul>
                             <li className='gre'>PHONE NUMBER</li>
                             <li className='h-d'>7839567777  ||  7376287777  ||  8383943460</li>
-                            {/* <li className='h-d'>7376287777,</li>
-                            <li className='h-d'>8383943460</li> */}
                     </ul>
                 </div>
                 <div>
