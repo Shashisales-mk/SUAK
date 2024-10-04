@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import jobimg1 from "../images/job-p.png"
+import jobimg3 from "../images/job-le.png"
+import shareImg from "../images/shareImg.svg"
 function Job() {
   return (
     <>
@@ -12,7 +14,7 @@ function Job() {
             <span className="back-arrow">&#8592;</span>
             Back to jobs search
           </a>
-          <img src="/assets/images/black-logo.png" alt="Shashi sales and marketing" className="job-logo" />
+          <img src={jobimg1} alt="Shashi sales and marketing" className="job-logo" />
         </header>
 
         <h1 className="job-title">Sales Specialist, YouTube (Fixed-Term Contract)</h1>
@@ -20,7 +22,7 @@ function Job() {
         <div className="job-meta">
           <img src="https://www.gstatic.com/images/icons/material/system/1x/place_grey600_24dp.png" alt="Location" />
           Copenhagen, Denmark
-          <img src="/assets/images/job-le.png" alt="Job type" className="job-type-icon" />
+          <img src={jobimg3} alt="Job type" className="job-type-icon" />
           Mid
         </div>
 
@@ -28,7 +30,7 @@ function Job() {
           <button className="apply-btn">Apply</button>
           <div className="share-icon">
             <button className="action-button share-btn">Share</button>
-            <img src="/assets/images/share.svg" alt="Share icon" />
+            <img src={shareImg} alt="Share icon" />
           </div>
         </div>
 
@@ -76,7 +78,7 @@ function Job() {
           <button className="apply-btn">Apply</button>
           <div className="share-icon">
             <button className="action-button share-btn">Share</button>
-            <img src="/assets/images/share.svg" alt="Share icon" />
+            <img src={shareImg} alt="Share icon" />
           </div>
         </div>
 

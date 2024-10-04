@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import "./career.css";
-
+import jobimg1 from "../images/job-p.png"
+import jobimg2 from "../images/job-l.png"
+import jobimg3 from "../images/job-le.png"
+import shareImg from "../images/shareImg.svg"
 const Career = () => {
   const jobsData = [
     {
@@ -80,9 +83,9 @@ const Career = () => {
       <div className="job-card" key={index}>
         <h3 className="jtitle">{job.title}</h3>
         <div className="job-details">
-          <div><img src="/assets/images/job-p.png" alt="" /> {job.company}</div>
-          <div><img src="/assets/images/job-l.png" alt="" /> {job.location}</div>
-          <div><img src="/assets/images/job-le.png" alt="" /> {job.type}</div>
+          <div><img src={jobimg1} alt="" /> {job.company}</div>
+          <div><img src={jobimg2} alt="" /> {job.location}</div>
+          <div><img src={jobimg3} alt="" /> {job.type}</div>
         </div>
         <div className="job-qualifications">
           <strong>Minimum qualifications:</strong>
@@ -94,7 +97,7 @@ const Career = () => {
           <a href="job" className="learn-more">Learn more</a>
           <div className="share-icon">
             <button className="action-button share-btn" onClick={() => alert('Sharing functionality would be implemented here.')}>Share</button>
-            <img src="/assets/images/share.svg" alt="Share icon" />
+            <img src={shareImg} alt="Share icon" />
           </div>
         </div>
       </div>
