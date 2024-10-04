@@ -32,3 +32,157 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: #626970;
 }
+button:hover{
+  cursor: pointer;
+}
+/* General Styles */
+.business-process {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.business-process h1{
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+.business-process h2, h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0;
+}
+.business-process h1 span {
+  color: #ff7000;
+}
+
+.business-process p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: start;
+  color: #555;
+}
+.pst{
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+.business-process ul {
+  list-style: none;
+  padding: 0;
+}
+
+.business-process li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Styling for Last Three Sections */
+.services, .industry-focus, .key-advantages {
+  padding: 2vw 4vw;
+  border-radius: 10px;
+  margin: 1vw 0;
+}
+
+.services h2, .industry-focus h3, .key-advantages h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2c3e50; /* Darker heading color */
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ff7000;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.business-process ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+.next-gen ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 2vw; */
+  padding: 0 0 0 22%;
+}
+.business-process li {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+  color: #2c3e50;
+  width: 100%;
+  text-align: left;
+}
+.next-gen li {
+  list-style: circle;
+  background: transparent;
+  border-radius: 0px;
+  box-shadow: none;
+  padding: 0px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+  color: #2c3e50;
+  width: 100%;
+  text-align: left;
+}
+
+.business-process li:hover {
+  transform: translateY(-5px);
+}
+
+/* Specific Styling for Key Advantages Section */
+.key-advantages ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid layout */
+  gap: 20px;
+}
+.key-advantages li {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-left: 5px solid #ff7000;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.key-advantages li:hover {
+  transform: translateY(-5px);
+}
+@media (min-width: 768px) {
+  .business-process ul {
+    justify-content: space-between;
+  }
+
+  .services ul, .industry-focus ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .business-process li {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .business-process ul {
+    justify-content: space-between;
+  }
+
+  .business-process li {
+    width: 30%;
+  }
+  .key-advantages ul {
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 items per row on larger screens */
+  }
+  .key-advantages li {
+    width: 100%;
+  }
+}

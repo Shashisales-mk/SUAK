@@ -32,20 +32,20 @@ export default function Footer() {
           </div>
           <div className="pages footer-services">
             <div className="fsze">Service</div>
-            <div className="styl"><li><Link to="/services">BUSINESS PROCESS SERVICES</Link></li></div>
-            <div className="styl"><li><Link to="/services">TALENT SERVICES</Link></li></div>
-            <div className="styl"><li><Link to="/services">STARTUP SERVICES</Link></li></div>
-            <div className="styl"><li><Link to="/services">CONSULTING</Link></li></div>
+            <div className="styl"><li><Link to="/business-process">BUSINESS PROCESS SERVICES</Link></li></div>
+            <div className="styl"><li><Link to="/talent-services">TALENT SERVICES</Link></li></div>
+            <div className="styl"><li><Link to="/startup-services">STARTUP SERVICES</Link></li></div>
+            <div className="styl"><li><Link to="/contact">CONSULTING</Link></li></div>
           </div>
         </div>
       </div>
 
       <div className="footer-copyright">
         <div className="styl">
-          COPYRIGHT @2024 | ALL RIGHT BY SUAK | SITEMAP
+        © Copyright SUAK Infotech Pvt Ltd. 2024. All rights reserved
         </div>
         <div className="styl" style={{ display: "flex", gap: "10px" }}>
-          <div>PRIVACY</div>
+          <div><Link to="/privacy-policy">PRIVACY</Link></div>
           <div>IMPRINT</div>
         </div>
       </div>

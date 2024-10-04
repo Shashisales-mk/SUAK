@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./services.css";
 import barchart from "../../../images/bar-chart.gif";
 import businessplan from "../../../images/business-plan.gif";
@@ -22,12 +23,17 @@ export default function Services() {
                 customer engagement process or just-in-time technical support
               </div>
               <div>
-                <button className="item-button">Discover more</button>
+                {/* <button className="item-button">Discover more</button> */}
+                <p className="item-button">
+                  <Link to="/business-process">Discover More</Link>
+                </p>
               </div>
             </div>
           </div>
 
-          <div style={{width:"0", borderRight:"1px solid", margin:"2vw"}}></div>
+          <div
+            style={{ width: "0", borderRight: "1px solid", margin: "2vw" }}
+          ></div>
 
           <div className="services-items" style={{ marginLeft: "1rem" }}>
             <div>
@@ -41,13 +47,16 @@ export default function Services() {
                 practices for optimizing HR operations and processes
               </div>
               <div>
-                <button className="item-button">Discover more</button>
+                {/* <button className="item-button">Discover more</button> */}
+                <p className="item-button">
+                  <Link to="/talent-services">Discover More</Link>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="sec" style={{marginBottom:"3vw"}}>
+        <div className="sec" style={{ marginBottom: "3vw" }}>
           <div className="services-items">
             <div>
               <img src={startup} loading="lazy" alt="startup"></img>
@@ -60,127 +69,167 @@ export default function Services() {
                 us, we know execution is more critical than idea
               </div>
               <div>
-                <button className="item-button">Discover more</button>
+                {/* <button className="item-button">Discover more</button> */}
+                <p className="item-button">
+                  <Link to="/startup-services">Discover More</Link>
+                </p>
               </div>
             </div>
           </div>
 
-          <div style={{width:"0", borderRight:"1px solid", margin:"2vw"}}></div>
-
+          <div
+            style={{ width: "0", borderRight: "1px solid", margin: "2vw" }}
+          ></div>
 
           <div className="services-items" style={{ marginLeft: "1rem" }}>
             <div>
-              <img src={strategicconsulting} loading="lazy" alt="strategic-consulting"></img>
+              <img
+                src={strategicconsulting}
+                loading="lazy"
+                alt="strategic-consulting"
+              ></img>
             </div>
             <div className="item">
               <div className="item-heading">CONSULTING</div>
               <div className="item-desc">
-                With strong delivery mechanism and global footprints in IT
-                projects, we know we have the capabilities to expand our horizon
-                across industries.
+                With a proven global presence in IT projects, we specialize in
+                turning ideas into reality. Our free pre-purchase consultation
+                ensures tailored support, backed by expertise in end-to-end
+                project execution across industries.
               </div>
               <div>
-                <button className="item-button">Discover more</button>
+                {/* <button className="item-button">Discover more</button> */}
+                <p className="item-button">
+                  <Link to="/contact">Discover More</Link>
+                </p>
               </div>
             </div>
           </div>
         </div>
-{/* ----------------------------------------------------------------------------------------------------- */}
+        {/* ----------------------------------------------------------------------------------------------------- */}
         <div className="dis">
-        <div className="sec" style={{borderBottom:"0"}}>
-          <div
-            className="services-items2"
-            style={{
-              borderRight: "1.5px solid",
-              display: "grid",
-              width: "50%",
-            }}
-          >
-            <div>HOW YOU FIND WORK</div>
-            <div className="find-cont">
-              are you a job <span style={{ color: "#ff7000" }}>seeker?</span> choose
-              the appropriate option based on your needs
-            </div>
-          </div>
-          <div
-            className="services-items2"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div className="sec" style={{ borderBottom: "0" }}>
             <div
-              className="items-cont"
-              style={{ display: "grid", gap: "3rem" }}
+              className="services-items2"
+              style={{
+                borderRight: "1.5px solid",
+                display: "grid",
+                width: "50%",
+              }}
             >
-              <div className="opt-cont">
-                <div style={{ width: "13rem" }}>
-                  <span style={{ textDecoration: "underline" }}>
-                    apply for trending jobs
-                  </span>
-                </div>
-                <div style={{ width: "13rem" }}>
-                  <span style={{ textDecoration: "underline" }}>
-                    view all current job openings
-                  </span>
-                </div>
+              <div>HOW YOU FIND WORK</div>
+              <div className="find-cont">
+                are you a job <span style={{ color: "#ff7000" }}>seeker?</span>{" "}
+                choose the appropriate option based on your needs
               </div>
-
-              <div className="opt-cont">
-                <div style={{ width: "13rem" }}>
-                  <span style={{ textDecoration: "underline" }}>
-                    submit your resume
-                  </span>
+            </div>
+            <div
+              className="services-items2"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div
+                className="items-cont"
+                style={{ display: "grid", gap: "3rem" }}
+              >
+                <div className="opt-cont">
+                  <div style={{ width: "13rem" }}>
+                    <span style={{ textDecoration: "underline" }}>
+                      apply for trending jobs
+                    </span>
+                  </div>
+                  <div style={{ width: "13rem" }}>
+                    <span style={{ textDecoration: "underline" }}>
+                      view all current job openings
+                    </span>
+                  </div>
                 </div>
-                <div style={{ width: "13rem" }}>
-                  <span style={{ textDecoration: "underline" }}>
-                    refer a freind
-                  </span>
+
+                <div className="opt-cont">
+                  <div style={{ width: "13rem" }}>
+                    <span style={{ textDecoration: "underline" }}>
+                      submit your resume
+                    </span>
+                  </div>
+                  <div style={{ width: "13rem" }}>
+                    <span style={{ textDecoration: "underline" }}>
+                      refer a freind
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div style={{height:"0", borderBottom:"1px solid", marginTop:"3vw", marginBottom:"3vw"}}></div>
+          <div
+            style={{
+              height: "0",
+              borderBottom: "1px solid",
+              marginTop: "3vw",
+              marginBottom: "3vw",
+            }}
+          ></div>
         </div>
         {/* --------------------------------------------------------------------------------------------------- */}
         <div className="dis-non">
-        <div style={{height:"0", borderBottom:"1px solid", marginTop:"3vw", marginBottom:"3vw"}}></div>
-        <div className="seeker-cont">
+          <div
+            style={{
+              height: "0",
+              borderBottom: "1px solid",
+              marginTop: "3vw",
+              marginBottom: "3vw",
+            }}
+          ></div>
+          <div className="seeker-cont">
             <div>How You Find Work</div>
             <div className="f-size">
-            are you a job <span style={{ color: "#ff7000" }}>seeker?</span> choose
-              the appropriate option based on your needs
+              are you a job <span style={{ color: "#ff7000" }}>seeker?</span>{" "}
+              choose the appropriate option based on your needs
             </div>
-            <div style={{height:"0", borderBottom:"1px solid", marginTop:"1vw", marginBottom:"0vw"}}></div>
+            <div
+              style={{
+                height: "0",
+                borderBottom: "1px solid",
+                marginTop: "1vw",
+                marginBottom: "0vw",
+              }}
+            ></div>
             <div className="opt-cont">
-                <div className="w-c">
-                  <span className="f-s" style={{ textDecoration: "underline" }}>
-                    apply for trending jobs
-                  </span>
-                </div>
-                <div className="w-c">
-                  <span className="f-s" style={{ textDecoration: "underline" }}>
-                    view all current job openings
-                  </span>
-                </div>
+              <div className="w-c">
+                <span className="f-s" style={{ textDecoration: "underline" }}>
+                  apply for trending jobs
+                </span>
               </div>
-            
-              <div className="opt-cont">
-                <div className="w-c">
-                  <span className="f-s" style={{ textDecoration: "underline" }}>
-                    submit your resume
-                  </span>
-                </div>
-                <div className="w-c">
-                  <span className="f-s" style={{ textDecoration: "underline" }}>
-                    refer a freind
-                  </span>
-                </div>
+              <div className="w-c">
+                <span className="f-s" style={{ textDecoration: "underline" }}>
+                  view all current job openings
+                </span>
               </div>
-        </div>
-        <div style={{height:"0", borderBottom:"1px solid", marginTop:"3vw", marginBottom:"3vw"}}></div>
+            </div>
+
+            <div className="opt-cont">
+              <div className="w-c">
+                <span className="f-s" style={{ textDecoration: "underline" }}>
+                  submit your resume
+                </span>
+              </div>
+              <div className="w-c">
+                <span className="f-s" style={{ textDecoration: "underline" }}>
+                  refer a freind
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              height: "0",
+              borderBottom: "1px solid",
+              marginTop: "3vw",
+              marginBottom: "3vw",
+            }}
+          ></div>
         </div>
       </div>
     </div>

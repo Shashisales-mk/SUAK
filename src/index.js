@@ -5,6 +5,12 @@ import App from './App';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Servicespage from './pages/Servicespage';
+import BusinessProcess from './pages/BusinessProcess';
+import StartupServices from './pages/StartupServices';
+import TalentServices from './pages/TalentServices';
+import Career from './pages/Career';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Job from './pages/Job';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -27,6 +33,30 @@ const router = createBrowserRouter([
   {
     path: "services",
     element: <Servicespage/>,
+  },
+  {
+    path: "business-process",
+    element: <BusinessProcess/>,
+  },
+  {
+    path: "startup-services",
+    element: <StartupServices/>,
+  },
+  {
+    path: "talent-services",
+    element: <TalentServices/>,
+  },
+  {
+    path: "career",
+    element: <Career/>,
+  },
+  {
+    path: "privacy-policy",
+    element: <PrivacyPolicy/>,
+  },
+  {
+    path: "job",
+    element: <Job/>,
   },
 ]);
 

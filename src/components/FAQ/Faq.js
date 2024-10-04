@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./faq.css";
 import faq1 from "../../images/faq1.png";
-
+import { Link } from 'react-router-dom';
 function Faq() {
     const [isVisible, setIsVisible] = useState({
         p1: false,
@@ -25,7 +25,7 @@ function Faq() {
                         <div className='hed-sm'>FAQ</div>
                         <div className='hed-lg'>Common Questions</div>
                     </div>
-                    <div className='bt'><button>GET IN TOUCH</button></div>
+                    <div className='bt'><Link to="/contact"><button>GET IN TOUCH</button></Link></div>
                 </div>
 
                 <div style={{ width: "0", borderRight: "1px solid", marginRight: "0.5rem", marginLeft: "0.5rem" }}></div>

@@ -6,7 +6,7 @@ function Motto() {
         <div className='motto-container'>
             <div className='motto'>
               <div className='motto1'><span style={{ color: "#ff7000" }}>Beyond Business</span> Our Motto</div>
-              <div className='motto3'>Explore our curated collection of unique products to express your induviduality.</div>
+              <div className='motto3'>We provide specialized HR solutions and recruitment services for the widest range of skill sets and business sectors.</div>
             </div>
             <div className='motto2'>
                 <div className='motto4'>

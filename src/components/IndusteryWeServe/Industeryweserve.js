@@ -33,7 +33,7 @@ function Industeryweserve() {
                 </div>
                 <div className='dis-gri'>
                     <div><img src={ip4} loading="lazy" alt='ip4'></img></div>
-                    <div>FMCG</div>
+                    <div style={{textAlign: "center"}}>Fashion & Apparel</div>
                 </div>
             </div>
 

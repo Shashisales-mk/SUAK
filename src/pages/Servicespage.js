@@ -17,7 +17,7 @@ function Servicespage() {
         <Servicesforclient></Servicesforclient>
         <Forstudent></Forstudent>
         <Industeryweserve></Industeryweserve>
-        <Choose></Choose>
+        {/* <Choose></Choose> */}
         <div style={{height:"0", borderBottom:"1px solid", margin:"3vw"}}></div>
         <Faq></Faq>
         <div style={{height:"0", borderBottom:"1px solid", margin:"3vw"}}></div>

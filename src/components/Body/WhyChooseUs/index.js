@@ -21,10 +21,7 @@ export default function Choose() {
             <div>
               <ul>
                 <li className="siz1">VISION</li>
-                <li className="siz2">Our commitment to integrity, transparency, and excellence fuels
-                our vision of reshaping the future of work. We strive to
-                cultivate meaningful connections, nurture talent, and foster
-                sustainable growth for business and individuals worldwide.</li>
+                <li className="siz2">To revolutionize human resource solutions by empowering businesses with innovative staffing and HR services, driven by cutting-edge technology and unmatched expertise, ensuring sustainable growth and exceptional workforce management.</li>
               </ul>
             </div>
           </div>
@@ -36,12 +33,7 @@ export default function Choose() {
             <div>
               <ul>
                   <li className="siz1">INNOVATION</li>
-                  <li className="siz2">Our commitment to innovation extends beyond the confines of
-                traditional recruitment methods. We envision a holistic
-                ecosystem where continuous learning, upskilling, and reskilling
-                are seamlessly integrated into the employment journey, ensuring
-                that both employers and employees thrive in an ever-changing
-                landscape.</li>
+                  <li className="siz2">At SUAK, innovation is at the heart of everything we do. We continuously explore new technologies and approaches to streamline staffing and HR processes, ensuring that businesses not only find the best talent but also stay ahead in a competitive landscape.</li>
                 </ul>
             </div>
           </div>

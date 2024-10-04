@@ -11,17 +11,17 @@ function Forstudent() {
         <div className='stu-l'>
                 <div className='hiring-card'>
                     <div className='hed-siz'>GLOBAL HIRING</div>
-                    <div className='desc-size'>souk provides professional global hire HR services to the human resource organization for the corporate world.</div>
-                    <div><button>READ MORE</button></div>
+                    <div className='desc-size'>Suak provides professional global hire HR services to the human resource organization for the corporate world.</div>
+                    {/* <div><button>READ MORE</button></div> */}
                 </div>
                 <div className='hiring-card'>
                     <div className='hed-siz'>RESUME WRITING</div>
-                    <div className='desc-size'>souk provides a professional HR resume writer that will highlight your skills in staff recruitment, budgeting, training, benefits, and payroll management.</div>
-                    <div><button>READ MORE</button></div>
+                    <div className='desc-size'>Suak provides a professional HR resume writer that will highlight your skills in staff recruitment, budgeting, training, benefits, and payroll management.</div>
+                    {/* <div><button>READ MORE</button></div> */}
                 </div>
                 <div className='hiring-card'>
                     <div className='hed-siz'>CAREER CONSULTATION</div>
-                    <div className='desc-size'>souk has a line of work where consultants provide one or more categories of HR-related career consultation.</div>
+                    <div className='desc-size'>Suak has a line of work where consultants provide one or more categories of HR-related career consultation.</div>
                     <div><button>READ MORE</button></div>
                 </div>
         </div>

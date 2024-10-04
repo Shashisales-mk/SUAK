@@ -1,6 +1,7 @@
 import React from "react";
 import "./aboutstart.css"
 import about_a from "../../images/about_a.png";
+import { Link } from "react-router-dom";
 function Aboutstart() {
   return (
     <div>
@@ -13,13 +14,13 @@ function Aboutstart() {
           <ul>
             <li className="fon-title">About Suak</li>
             <li className="fon-desc">
-              At Suak, we link takent with fitting roles, empowering business to
+              At Suak, we link talent with fitting roles, empowering business to
               achieve their goals. Our approach blends management tools and
               principles within a sustainability framework: People, Planet,
               Profit.
             </li>
             <li>
-              <button>GET IN TOUCH</button>
+              <Link to="/contact"><button>GET IN TOUCH</button></Link>
             </li>
             <li style={{height:"0", borderBottom:"1px solid", marginRight:"3vw"}}></li>
             <li className="fon2">
