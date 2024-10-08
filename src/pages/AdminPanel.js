@@ -36,9 +36,12 @@ const AdminPanel = () => {
     }
   }, [navigate]);
 
+  const isProduction = window.location.hostname === 'suak.in';
+  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:4000/';
+
   const fetchJobs = async () => {
     try {
-      const response = await fetch('http://localhost:4000/jobsdata');
+      const response = await fetch(`${baseURL}jobsdata`);
       const data = await response.json();
       setJobs(data);
     } catch (error) {
@@ -48,7 +51,7 @@ const AdminPanel = () => {
 
   const fetchApplications = async (jobId) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/job-applications/${jobId}`);
+      const response = await fetch(`${baseURL}api/job-applications/${jobId}`);
       const data = await response.json();
       setApplications(data);
     } catch (error) {

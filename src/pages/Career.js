@@ -20,10 +20,11 @@ const Career = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const navigate = useNavigate();
-
+  const isProduction = window.location.hostname === 'suak.in';
+  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:4000/';
   useEffect(() => {
     // Fetch data from the backend
-    fetch('http://localhost:4000/jobsdata/')
+    fetch(`${baseURL}jobsdata/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

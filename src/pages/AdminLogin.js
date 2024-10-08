@@ -10,10 +10,13 @@ const AdminLogin = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate(); // useNavigate for redirect
 
+  const isProduction = window.location.hostname === 'suak.in';
+  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:4000/';
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/admin/login', { email, password });
+      const res = await axios.post(`${baseURL}api/admin/login`, { email, password });
       
       localStorage.setItem('token', res.data.token);
       setMessage('Login successful!');

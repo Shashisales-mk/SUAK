@@ -55,6 +55,8 @@ const ApplyForm = () => {
       ]
     });
   };
+  const isProduction = window.location.hostname === 'suak.in';
+  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:4000/';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,7 +82,7 @@ const ApplyForm = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/api/job-application", formDataToSend, {
+      const response = await axios.post(`${baseURL}api/job-application`, formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
