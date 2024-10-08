@@ -22,7 +22,7 @@ const Career = () => {
   const navigate = useNavigate();
   // const isProduction = window.location.hostname === 'suak.in';
   // const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
-  const baseurl = "https://suak.in/api";
+  const baseurl = "https://suak.in/";
 
   useEffect(() => {
     // Fetch data from the backend
