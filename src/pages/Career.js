@@ -26,7 +26,7 @@ const Career = () => {
 
   useEffect(() => {
     // Fetch data from the backend
-    fetch(`${baseurl}api/jobsdata/`)
+    fetch(`${baseurl}api/jobsdata`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

@@ -95,8 +95,8 @@ const AdminPanel = () => {
 
     try {
       const response = await fetch(editJobId
-        ? `http://localhost:4000/jobsdata/${editJobId}`
-        : 'http://localhost:4000/jobsdata', {
+        ? `${baseURL}api/jobsdata/${editJobId}`
+        : '${baseURL}api/jobsdata', {
         method: editJobId ? 'PUT' : 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ const AdminPanel = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:4000/jobsdata/${id}`, {
+      await fetch(`${baseURL}api/jobsdata/${id}`, {
         method: 'DELETE',
       });
       console.log('Job deleted!');
