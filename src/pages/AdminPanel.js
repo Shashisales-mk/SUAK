@@ -41,7 +41,7 @@ const AdminPanel = () => {
 
   const fetchJobs = async () => {
     try {
-      const response = await fetch(`${baseURL}jobsdata`);
+      const response = await fetch(`${baseURL}api/jobsdata`);
       const data = await response.json();
       setJobs(data);
     } catch (error) {

@@ -24,7 +24,7 @@ const Career = () => {
   const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
   useEffect(() => {
     // Fetch data from the backend
-    fetch(`${baseURL}jobsdata/`)
+    fetch(`${baseURL}api/jobsdata/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

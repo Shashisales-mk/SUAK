@@ -12,7 +12,7 @@ const JobDetails = () => {
   const isProduction = window.location.hostname === 'suak.in';
   const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
   useEffect(() => {
-    fetch(`${baseURL}jobsdata/`)
+    fetch(`${baseURL}api/jobsdata/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
