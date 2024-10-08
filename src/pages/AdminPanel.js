@@ -96,7 +96,7 @@ const AdminPanel = () => {
     try {
       const response = await fetch(editJobId
         ? `${baseURL}api/jobsdata/${editJobId}`
-        : '${baseURL}api/jobsdata', {
+        : `${baseURL}api/jobsdata`, {
         method: editJobId ? 'PUT' : 'POST',
         headers: {
           'Content-Type': 'application/json',
