@@ -1,0 +1,193 @@
+.main-admin-cont{
+    display: flex;
+}
+.left-admin-cont{
+    width: 30%;
+}
+.right-admin-cont{
+    width: 70%;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  .main-admin-cont {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .left-admin-cont {
+    background-color: #ff7000;
+    padding: 20px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .left-admin-cont ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .left-admin-cont li {
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .left-admin-cont li:hover {
+    background-color: #2c3e50;
+    padding-left: 15px;
+  }
+  
+  .right-admin-cont {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+
+  
+  .add-jobs-active .show-add-jobs,
+  .view-applications-active .show-view-applications {
+    display: block;
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  .show-add-jobs button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .show-add-jobs button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  button.logout {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  button.logout:hover {
+    background-color: #c0392b;
+  }
+  
+  .job-list {
+    margin-top: 20px;
+    border-top: 2px solid #ddd;
+  }
+  
+  .job-list li {
+    padding: 15px 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .job-list li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .job-list .buttonGroup button {
+    margin-right: 10px;
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .job-list .buttonGroup button:hover {
+    background-color: #2980b9;
+  }
+  
+  .job-list .buttonGroup button.delete {
+    background-color: #e74c3c;
+  }
+  
+  .job-list .buttonGroup button.delete:hover {
+    background-color: #c0392b;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

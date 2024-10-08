@@ -10,7 +10,11 @@ import StartupServices from './pages/StartupServices';
 import TalentServices from './pages/TalentServices';
 import Career from './pages/Career';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import Job from './pages/Job';
+// import Job from './pages/Job';
+import AdminLogin from './pages/AdminLogin';
+import AdminPanel from './pages/AdminPanel';
+import JobDetails from './pages/JobDetails';
+import ApplyForm from './pages/ApplyForm'; // New import for Apply page
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -20,46 +24,61 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "about",
-    element: <About/>,
+    element: <About />,
   },
   {
     path: "contact",
-    element: <Contact/>,
+    element: <Contact />,
   },
   {
     path: "services",
-    element: <Servicespage/>,
+    element: <Servicespage />,
   },
   {
     path: "business-process",
-    element: <BusinessProcess/>,
+    element: <BusinessProcess />,
   },
   {
     path: "startup-services",
-    element: <StartupServices/>,
+    element: <StartupServices />,
   },
   {
     path: "talent-services",
-    element: <TalentServices/>,
+    element: <TalentServices />,
   },
   {
     path: "career",
-    element: <Career/>,
+    element: <Career />,
   },
   {
     path: "privacy-policy",
-    element: <PrivacyPolicy/>,
+    element: <PrivacyPolicy />,
+  },
+  // {
+  //   path: "job",
+  //   element: <Job />,
+  // },
+  {
+    path: "/login",
+    element: <AdminLogin />,
   },
   {
-    path: "job",
-    element: <Job/>,
+    path: "/admin-panel",
+    element: <AdminPanel />,
   },
+  {
+    path: "/job/:id",
+    element: <JobDetails />,
+  },
+  {
+    path: "/apply/:id", // Route for Apply page
+    element: <ApplyForm />,
+  }
 ]);
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
