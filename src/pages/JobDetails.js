@@ -9,10 +9,11 @@ import shareImg from "../images/shareImg.svg";
 const JobDetails = () => {
   const [jobsData, setJobsData] = useState([]);
   const navigate = useNavigate(); // Use navigate for navigation
-  const isProduction = window.location.hostname === 'suak.in';
-  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
+  // const isProduction = window.location.hostname === 'suak.in';
+  // const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
+  const baseurl = "https://suak.in/api";
   useEffect(() => {
-    fetch(`${baseURL}api/jobsdata/`)
+    fetch(`${baseurl}/jobsdata/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
