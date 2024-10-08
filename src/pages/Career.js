@@ -21,7 +21,7 @@ const Career = () => {
 
   const navigate = useNavigate();
   const isProduction = window.location.hostname === 'suak.in';
-  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:4000/';
+  const baseURL = isProduction ? 'https://suak.in:5000/' : 'http://localhost:5000/';
   useEffect(() => {
     // Fetch data from the backend
     fetch(`${baseURL}jobsdata/`)

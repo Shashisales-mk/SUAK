@@ -11,7 +11,7 @@ const AdminLogin = () => {
   const navigate = useNavigate(); // useNavigate for redirect
 
   const isProduction = window.location.hostname === 'suak.in';
-  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:4000/';
+  const baseURL = isProduction ? 'https://suak.in:5000/' : 'http://localhost:5000/';
 
   const handleLogin = async (e) => {
     e.preventDefault();
