@@ -10,7 +10,7 @@ const JobDetails = () => {
   const [jobsData, setJobsData] = useState([]);
   const navigate = useNavigate(); // Use navigate for navigation
   const isProduction = window.location.hostname === 'suak.in';
-  const baseURL = isProduction ? 'https://suak.in:5000/' : 'http://localhost:5000/';
+  const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
   useEffect(() => {
     fetch(`${baseURL}jobsdata/`)
       .then((response) => {
