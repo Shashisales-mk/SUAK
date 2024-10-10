@@ -405,7 +405,7 @@ const ApplyForm = () => {
                       type="number"
                       name="noticeperiod"
                       placeholder="Notice Period (in days)"
-                      value={work.startDate}
+                      value={work.noticeperiod}
                       onChange={(e) => handleWorkExperienceChange(index, e)}
                       required
                     />
