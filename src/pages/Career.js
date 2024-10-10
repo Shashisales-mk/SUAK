@@ -274,6 +274,7 @@ const Career = () => {
           <div className="job-cards">{renderJobs()}</div>
         </div>
       </div>
+      <div className="bor-lin pst"></div>
       <Footer />
     </>
   );

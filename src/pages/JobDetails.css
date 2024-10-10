@@ -3,3 +3,16 @@
     color: #000;
     font-size: 1rem;
 }
+.other-jobs .job-card{
+    display: grid !important;
+    gap: 0.5vw;
+}
+.other-jobs .job-card p{
+    text-align: start;
+}
+.other-jobs .job-card ul{
+    margin-top: 0.5vw;
+}
+.other-jobs h3{
+    text-align: center !important;
+}

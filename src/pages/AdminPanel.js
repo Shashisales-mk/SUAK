@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./AdminPanel.css";
 import Navbar from "../components/Navbar";
 import JoditEditor from "jodit-pro-react";
+import { Link } from "react-router-dom";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
 const AdminPanel = () => {
   const editor = useRef(null);
   // let [content, setContent] = useState("")
@@ -10,6 +14,10 @@ const AdminPanel = () => {
   const baseURL = isProduction ? "https://suak.in/" : "http://localhost:5000/";
 
   const navigate = useNavigate();
+  const [statusUpdateLoading, setStatusUpdateLoading] = useState(false);
+  const [statusUpdateError, setStatusUpdateError] = useState(null);
+
+
   const [jobs, setJobs] = useState([]);
   const [applications, setApplications] = useState([]);
   const [selectedJobId, setSelectedJobId] = useState(null);
@@ -91,6 +99,14 @@ const AdminPanel = () => {
     });
   };
 
+  const handleQuillChange = (value, name) => {
+    setJobForm({
+      ...jobForm,
+      [name]: value,
+    });
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newId = jobs.length ? Math.max(...jobs.map((job) => job.id)) + 1 : 1;
@@ -103,43 +119,53 @@ const AdminPanel = () => {
       type: jobForm.type,
       experience: jobForm.experience,
       skills: jobForm.skills.split(",").map((skill) => skill.trim()),
-      qualifications: jobForm.qualifications.split(",").map((q) => q.trim()),
-      preferedqualifications: jobForm.preferedqualifications
-        ? jobForm.preferedqualifications.split(",").map((pq) => pq.trim())
-        : [],
-      aboutthejob: jobForm.aboutthejob.split(",").map((atj) => atj.trim()),
-      responsibilities: jobForm.responsibilities
-        .split(",")
-        .map((r) => r.trim()),
+      qualifications: jobForm.qualifications,
+      preferedqualifications: jobForm.preferedqualifications,
+      aboutthejob: jobForm.aboutthejob,
+      responsibilities: jobForm.responsibilities,
     };
 
+    console.log("Submitting job data:", jobData);
+
     try {
-      const response = await fetch(
-        editJobId
-          ? `${baseURL}api/jobsdata/${editJobId}`
-          : `${baseURL}api/jobsdata`,
-        {
-          method: editJobId ? "PUT" : "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(jobData),
-        }
-      );
+      const url = editJobId
+        ? `${baseURL}api/jobsdata/${editJobId}`
+        : `${baseURL}api/jobsdata`;
+
+      console.log("Sending request to:", url);
+
+      const response = await fetch(url, {
+        method: editJobId ? "PUT" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jobData),
+      });
+
+      console.log("Response status:", response.status);
+
+      const responseData = await response.json();
+      console.log("Response data:", responseData);
 
       if (response.ok) {
-        const result = await response.json();
-        console.log(editJobId ? "Job updated!" : "Job added!", result);
+        console.log(editJobId ? "Job updated!" : "Job added!", responseData);
         fetchJobs();
         resetForm();
+        alert(editJobId ? "Job updated successfully!" : "Job added successfully!");
       } else {
-        const errorData = await response.json();
-        console.error("Error submitting job:", errorData);
+        console.error("Server returned an error:", responseData);
+        let errorMessage = responseData.message || 'Unknown error';
+        if (responseData.error) {
+          errorMessage += `: ${responseData.error}`;
+        }
+        alert(`Error submitting job: ${errorMessage}`);
       }
     } catch (error) {
       console.error("Error submitting job:", error);
+      alert(`Error submitting job: ${error.message || 'Unknown error occurred'}`);
     }
   };
+
 
   const handleEdit = (job) => {
     setJobForm({
@@ -189,41 +215,46 @@ const AdminPanel = () => {
     fetchApplications(jobId);
   };
 
-  const handleHire = async (applicationId) => {
+  const updateApplicationStatus = async (applicationId, newStatus) => {
+    setStatusUpdateLoading(true);
+    setStatusUpdateError(null);
     try {
-      await fetch(`${baseURL}api/job-application/hire/${applicationId}`, {
-        method: "POST",
+      const response = await fetch(`${baseURL}api/application/update-status/${applicationId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: newStatus }),
       });
-      console.log("Application hired!");
-      fetchApplications(selectedJobId); // Refresh applications
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(`Application ${applicationId} status updated to ${newStatus}`);
+      fetchApplications(selectedJobId);
     } catch (error) {
-      console.error("Error hiring application:", error);
+      console.error("Error updating application status:", error);
+      setStatusUpdateError(error.message || 'Failed to update application status');
+    } finally {
+      setStatusUpdateLoading(false);
     }
+  };
+
+  const handleHire = async (applicationId) => {
+    await updateApplicationStatus(applicationId, 'hired');
   };
 
   const handleReject = async (applicationId) => {
-    try {
-      await fetch(`${baseURL}api/job-application/reject/${applicationId}`, {
-        method: "POST",
-      });
-      console.log("Application rejected!");
-      fetchApplications(selectedJobId); // Refresh applications
-    } catch (error) {
-      console.error("Error rejecting application:", error);
-    }
+    await updateApplicationStatus(applicationId, 'rejected');
   };
 
   const handleShortlist = async (applicationId) => {
-    try {
-      await fetch(`${baseURL}api/job-application/shortlist/${applicationId}`, {
-        method: "POST",
-      });
-      console.log("Application shortlisted!");
-      fetchApplications(selectedJobId); // Refresh applications
-    } catch (error) {
-      console.error("Error shortlisting application:", error);
-    }
+    await updateApplicationStatus(applicationId, 'shortlisted');
   };
+
+
 
   return (
     <>
@@ -262,14 +293,7 @@ const AdminPanel = () => {
               </h2>
               <form onSubmit={handleSubmit} style={styles.form}>
                 <div className="admsec">
-                  <label
-                    htmlFor="company"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="company" style={styles.label}>
                     Company
                   </label>
                   <input
@@ -283,14 +307,7 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="title"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="title" style={styles.label}>
                     Job Title
                   </label>
                   <input
@@ -304,14 +321,7 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="location"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="location" style={styles.label}>
                     Job Location
                   </label>
                   <input
@@ -325,14 +335,7 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="type"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="type" style={styles.label}>
                     Job Type
                   </label>
                   <select
@@ -342,8 +345,7 @@ const AdminPanel = () => {
                     required
                     style={styles.input}
                   >
-                    <option value="">Select Job Type</option>{" "}
-                    {/* Default empty option */}
+                    <option value="">Select Job Type</option>
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
                     <option value="Contract">Contract</option>
@@ -351,14 +353,7 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="experience"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="experience" style={styles.label}>
                     Experience
                   </label>
                   <select
@@ -368,8 +363,7 @@ const AdminPanel = () => {
                     required
                     style={styles.input}
                   >
-                    <option value="">Select Experience Level</option>{" "}
-                    {/* Default empty option */}
+                    <option value="">Select Experience Level</option>
                     <option value="Entry Level">Entry Level</option>
                     <option value="Mid Level">Mid Level</option>
                     <option value="Senior Level">Senior Level</option>
@@ -377,75 +371,42 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="aboutthejob"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="aboutthejob" style={styles.label}>
                     Role Description:
                   </label>
-                  <JoditEditor
-                    name="aboutthejob"
-                    ref={editor}
+                  <ReactQuill
+                    theme="snow"
                     value={jobForm.aboutthejob}
-                    tabIndex={1}
-                    onChange={(newContent) =>
-                      setJobForm({ ...jobForm, aboutthejob: newContent })
-                    }
+                    onChange={(value) => handleQuillChange(value, 'aboutthejob')}
                   />
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="preferedqualifications"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="preferedqualifications" style={styles.label}>
                     Eligibility Criteria
                   </label>
-                  <JoditEditor
-                    name="preferedqualifications"
-                    ref={editor}
+                  <ReactQuill
+                    theme="snow"
                     value={jobForm.preferedqualifications}
-                    tabIndex={1}
-                    onChange={(newContent) =>
-                      setJobForm({
-                        ...jobForm,
-                        preferedqualifications: newContent,
-                      })
-                    }
+                    onChange={(value) => handleQuillChange(value, 'preferedqualifications')}
                   />
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="responsibilities"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="responsibilities" style={styles.label}>
                     Responsibilities:
                   </label>
-                  <JoditEditor
-                    name="responsibilities"
-                    ref={editor}
+                  <ReactQuill
+                    theme="snow"
                     value={jobForm.responsibilities}
-                    tabIndex={1}
-                    onChange={(newContent) =>
-                      setJobForm({ ...jobForm, responsibilities: newContent })
-                    }
+                    onChange={(value) => handleQuillChange(value, 'responsibilities')}
                   />
                 </div>
 
                 <div className="admsec">
+                  <label htmlFor="skills" style={styles.label}>
+                    Skills
+                  </label>
                   <input
                     name="skills"
                     placeholder="Skills (comma-separated)"
@@ -457,31 +418,21 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="admsec">
-                  <label
-                    htmlFor="qualifications"
-                    style={{
-                      fontWeight: "bold",
-                      marginBottom: "5px",
-                      display: "block",
-                    }}
-                  >
+                  <label htmlFor="qualifications" style={styles.label}>
                     Special Benefits:
                   </label>
-                  <JoditEditor
-                    name="qualifications"
-                    ref={editor}
+                  <ReactQuill
+                    theme="snow"
                     value={jobForm.qualifications}
-                    tabIndex={1}
-                    onChange={(newContent) =>
-                      setJobForm({ ...jobForm, qualifications: newContent })
-                    }
+                    onChange={(value) => handleQuillChange(value, 'qualifications')}
                   />
                 </div>
-                {/* <input name="qualifications" placeholder="Qualifications (comma-separated)" value={jobForm.qualifications} onChange={handleChange} required style={styles.input} /> */}
+
                 <button type="submit" style={styles.submitButton}>
                   {editJobId ? "Update Job" : "Add Job"}
                 </button>
               </form>
+
 
               <h2 style={styles.jobListHeading}>Job Listings</h2>
               <ul style={styles.jobList}>
@@ -516,67 +467,114 @@ const AdminPanel = () => {
             </div>
           )}
 
-          {activeSection === "view-applications" && ( // Conditionally render the 'View Applications' section
-            <div className="show-view-applications">
-              <h2 style={styles.applicationsHeading}>
-                Applications for Job ID: {selectedJobId}
-              </h2>
-              {applications.length > 0 ? (
-                <ul style={styles.applicationsList}>
-                  {applications.map((app) => (
-                    <li key={app._id} style={styles.applicationItem}>
-                      <p>
-                        <strong>Name:</strong> {app.firstName} {app.lastName}
-                      </p>
-                      <p>
-                        <strong>Email:</strong> {app.email}
-                      </p>
-                      <p>
-                        <strong>Phone:</strong> {app.phone}
-                      </p>
-                      <p>
-                        <strong>Experience:</strong> {app.address}
-                      </p>
-                      <p>
-                        <strong>Skills:</strong>{" "}
-                        {app.skills ? app.skills.join(", ") : "N/A"}
-                      </p>{" "}
-                      {/* Check if skills exist */}
-                      <p>
-                        <strong>CTC:</strong> {app.city}
-                      </p>
-                      <p>
-                        <strong>Expected CTC:</strong> {app.state}
-                      </p>
-                      {/* Additional fields can be displayed here */}
-                      <div className="application-actions">
+{activeSection === "view-applications" && ( // Conditionally render the 'View Applications' section
+  <div className="show-view-applications">
+    <h2 className="applicationsHeading">
+      Applications for Job ID: {selectedJobId}
+    </h2>
+    {applications.length > 0 ? (
+      <ul className="applicationsList">
+        {applications.map((app) => (
+          <li key={app._id} className="applicationItem">
+            <p>
+              <strong>Name:</strong> {app.firstName} {app.lastName}
+            </p>
+            <p>
+              <strong>Email:</strong> {app.email}
+            </p>
+            <p>
+              <strong>Phone:</strong> {app.phone}
+            </p>
+            <p>
+              <strong>Address:</strong> {app.address}
+            </p>
+            <p>
+              <strong>City:</strong> {app.city}
+            </p>
+            <p>
+              <strong>State:</strong> {app.state}
+            </p>
+            <p>
+              <strong>Zip:</strong> {app.zip}
+            </p>
+            <p>
+              <strong>Work Experience:</strong>
+            </p>
+            {app.workExperience && app.workExperience.length > 0 ? (
+              app.workExperience.map((work, index) => (
+                <div key={index} className="workExperienceContainer">
+                  <h3>{work.jobTitle} at {work.company}</h3>
+                  <div className="workExperienceDetails">
+                    <p>
+                      <strong>Start Date:</strong> {new Date(work.startDate).toLocaleDateString()}
+                    </p>
+                    <p>
+                      <strong>End Date:</strong> {work.endDate ? new Date(work.endDate).toLocaleDateString() : "Present"}
+                    </p>
+                    <p>
+                      <strong>Current CTC:</strong> ₹{work.currentCTC}
+                    </p>
+                    <p>
+                      <strong>Expected CTC:</strong> ₹{work.expectedCTC}
+                    </p>
+                    <p>
+                      <strong>Skills:</strong> {work.skills}
+                    </p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>N/A</p>
+            )}
+            {/* Download Resume Button */}
+            <p>
+  <strong>Resume:</strong>{" "}
+  <Link
+  to={`/resumes/${app.resume.split(/[/\\]/).pop()}`} // Extract the filename from either backslash or forward slash
+  download
+  className="downloadButton"
+>
+  Download Resume
+</Link>
+
+
+</p>
+
+<div className="application-actions">
                         <button
                           onClick={() => handleHire(app._id)}
-                          style={styles.hireButton}
+                          disabled={statusUpdateLoading}
+                          style={{ backgroundColor: '#4CAF50', color: 'white' }}
                         >
                           Hire
                         </button>
                         <button
                           onClick={() => handleReject(app._id)}
-                          style={styles.rejectButton}
+                          disabled={statusUpdateLoading}
+                          style={{ backgroundColor: '#f44336', color: 'white' }}
                         >
                           Reject
                         </button>
                         <button
                           onClick={() => handleShortlist(app._id)}
-                          style={styles.shortlistButton}
+                          disabled={statusUpdateLoading}
+                          style={{ backgroundColor: '#2196F3', color: 'white' }}
                         >
                           Shortlist
                         </button>
+                       
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No applications found for this job.</p>
-              )}
-            </div>
-          )}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No applications found for this job.</p>
+    )}
+  </div>
+)}
+
+
+
         </div>
       </div>
     </>

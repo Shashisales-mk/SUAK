@@ -56,6 +56,7 @@ const AdminLogin = () => {
         {message && <p style={styles.message}>{message}</p>}
       </form>
     </div>
+    <div className="bor-lin pst"></div>
     <Footer></Footer>
     </>
   );
@@ -68,11 +69,11 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#f4f4f9',
+    // backgroundColor: '#f4f4f9',
     padding: '0 20px',
   },
   form: {
-    backgroundColor: '#fff',
+    backgroundColor: 'rgb(243 241 241)',
     padding: '40px',
     borderRadius: '10px',
     boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',

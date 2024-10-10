@@ -12,6 +12,7 @@ export default function Navbar() {
             <div className="nav2">
               <li><Link to="/about">ABOUT US</Link></li>
               <li><Link to="/services">SERVICES</Link></li>
+              <li><Link to="/careers">CAREERS</Link></li>
               <li><Link to="/contact" className="contact"><button>CONTACT US</button></Link></li>
             </div>
           </div>

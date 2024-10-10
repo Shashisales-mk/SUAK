@@ -28,6 +28,7 @@ export default function Footer() {
             <div className="fsze">Pages</div>
             <div className="styl"><li><Link to="/">HOME</Link></li></div>
             <div className="styl"><li><Link to="/about">ABOUT US</Link></li></div>
+            <div className="styl"><li><Link to="/careers">CAREERS</Link></li></div>
             <div className="styl"><li><Link to="/contact">CONTACT US</Link></li></div>
           </div>
           <div className="pages footer-services">

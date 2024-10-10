@@ -5,20 +5,21 @@ import Footer from "../components/Footer";
 import jobimg1 from "../images/logo.png";
 import jobimg3 from "../images/job-le.png";
 import shareImg from "../images/shareImg.svg";
-// import jobimg4 from "../images/logo2.png";
 import shareIcon1 from "../images/shareIcon1.png";
 import shareIcon2 from "../images/shareIcon2.png";
 import "./JobDetails.css";
 
 const JobDetails = () => {
   const [jobsData, setJobsData] = useState([]);
+  const [otherJobs, setOtherJobs] = useState([]);
   const navigate = useNavigate();
-  const { id } = useParams(); // Always call hooks at the top level
-  const [activeShareIndex, setActiveShareIndex] = useState(null); // Track which share option is active
+  const { id } = useParams();
+  const [activeShareIndex, setActiveShareIndex] = useState(null);
 
   const baseurl = "https://suak.in/api";
 
   useEffect(() => {
+    // Fetch all jobs
     fetch(`${baseurl}/jobsdata/`)
       .then((response) => {
         if (!response.ok) {
@@ -26,31 +27,40 @@ const JobDetails = () => {
         }
         return response.json();
       })
-      .then((data) => setJobsData(data))
+      .then((data) => {
+        setJobsData(data);
+        // Get three random jobs for "Other Job Opportunities"
+        const randomJobs = getRandomJobs(data, 3, parseInt(id));
+        setOtherJobs(randomJobs);
+      })
       .catch((error) => console.error("Error fetching jobs:", error));
-  }, []);
+  }, [id]);
+
+  const getRandomJobs = (jobs, count, currentJobId) => {
+    const filteredJobs = jobs.filter((job, index) => index !== currentJobId);
+    const shuffled = filteredJobs.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
 
   const jobIndex = parseInt(id);
 
-  // Check if the job exists early in the render
   if (!jobsData.length || jobIndex < 0 || jobIndex >= jobsData.length) {
     return <div>Job not found</div>;
   }
 
   const job = jobsData[jobIndex];
 
-  // Function to handle Apply button click
   const handleApplyClick = () => {
     navigate(`/apply/${job._id}`);
   };
 
   const handleShareClick = (index) => {
-    setActiveShareIndex(activeShareIndex === index ? null : index); // Toggle the share options visibility
+    setActiveShareIndex(activeShareIndex === index ? null : index);
   };
 
   const handleShareOptionClick = (action) => {
     const currentUrl = window.location.href;
-  
+
     if (action === "copy") {
       navigator.clipboard.writeText(currentUrl)
         .then(() => {
@@ -62,19 +72,12 @@ const JobDetails = () => {
     } else if (action === "email") {
       const subject = encodeURIComponent("Check out this job opportunity!");
       const body = encodeURIComponent(`I found this interesting job on SUAK: ${currentUrl}`);
-  
-      // Construct the mailto link
       window.location.href = `mailto:?subject=${subject}&body=${body}`;
-  
-      // Open mailto link using window.open
-      // window.open(mailtoLink);
     }
-  
-    setActiveShareIndex(null); 
+
+    setActiveShareIndex(null);
   };
-  
-  
-  
+
 
   return (
     <>
@@ -179,74 +182,58 @@ const JobDetails = () => {
             </button>
             <img src={shareImg} alt="Share icon" />
             <div
-            className="share-options"
-            style={{ display: activeShareIndex === 0 ? "flex" : "none", marginTop: "5px" }}
-          >
-            <div
-              className="share-option"
-              data-action="copy"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleShareOptionClick("copy");
-              }}
+              className="share-options"
+              style={{ display: activeShareIndex === 0 ? "flex" : "none", marginTop: "5px" }}
             >
-              <img src={shareIcon1} alt="Share icon" /> Copy link
-            </div>
+              <div
+                className="share-option"
+                data-action="copy"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleShareOptionClick("copy");
+                }}
+              >
+                <img src={shareIcon1} alt="Share icon" /> Copy link
+              </div>
 
-            <div
-              className="share-option"
-              data-action="email"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleShareOptionClick("email");
-              }}
-            >
-              <img src={shareIcon2} alt="Share icon" /> Email
+              <div
+                className="share-option"
+                data-action="email"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleShareOptionClick("email");
+                }}
+              >
+                <img src={shareIcon2} alt="Share icon" /> Email
+              </div>
             </div>
           </div>
-          </div>
 
-          
+
         </div>
 
         <section className="section">
           <h2 className="second-title">Other Job Opportunities</h2>
           <div className="other-jobs">
-            {/* Example other jobs */}
-            <div className="job-card">
-              <h3>Senior UX Researcher, gTech Users and Products</h3>
-              <p>
-                <strong>Location:</strong> Boulder, CO, USA; Atlanta, GA, USA
-              </p>
-              <p>
-                <strong>Qualifications:</strong> Bachelor's degree, 7 years of
-                experience
-              </p>
-            </div>
-            <div className="job-card">
-              <h3>Chip Package Signal and Power Integrity Engineer</h3>
-              <p>
-                <strong>Location:</strong> Sunnyvale, CA, USA
-              </p>
-              <p>
-                <strong>Qualifications:</strong> Bachelor's degree, 2 years of
-                experience
-              </p>
-            </div>
-            <div className="job-card">
-              <h3>
-                Digital Business Marketing Apprenticeship, March 2025 Start
-                (English)
-              </h3>
-              <p>
-                <strong>Location:</strong> Hyderabad, Telangana, India;
-                Gurugram, Haryana, India
-              </p>
-              <p>
-                <strong>Qualifications:</strong> Currently pursuing Bachelor's
-                degree
-              </p>
-            </div>
+            {otherJobs.map((otherJob, index) => (
+              <div className="job-card" key={index}>
+                <h3>{otherJob.title}</h3>
+                <p>
+                  <strong>Location:</strong> {otherJob.location}
+                </p>
+                <p>
+                  <strong>Qualifications:</strong> {otherJob.experience}
+                </p>
+                <p>
+                  <strong>Minimum Qualifications:</strong>
+                  <small dangerouslySetInnerHTML={{ __html: job.preferedqualifications }}></small>
+                  {/* {otherJob.preferedqualifications} */}
+                </p>
+                <button onClick={() => navigate(`/job/${jobsData.indexOf(otherJob)}`)}>
+                  View Details
+                </button>
+              </div>
+            ))}
           </div>
         </section>
       </div>
