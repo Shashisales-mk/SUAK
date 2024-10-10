@@ -1,5 +1,6 @@
 import React from "react";
 import "./newjobs.css";
+import { Link } from "react-router-dom";
 function Newjobs() {
   return (
     <div>
@@ -30,7 +31,7 @@ function Newjobs() {
                   />
                 </li>
                 <li>
-                  <button>SEARCH JOB</button>
+                  <Link to="/careers"><button>SEARCH JOB</button></Link>
                 </li>
               </ul>
             </ul>

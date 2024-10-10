@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminPanel.css";
 import Navbar from "../components/Navbar";
-import JoditEditor from "jodit-pro-react";
+// import JoditEditor from "jodit-pro-react";
 import { Link } from "react-router-dom";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -516,6 +516,15 @@ const AdminPanel = () => {
                     </p>
                     <p>
                       <strong>Expected CTC:</strong> ₹{work.expectedCTC}
+                    </p>
+                    <p>
+                      <strong>Total Experience:</strong> {work.totalexperience}
+                    </p>
+                    <p>
+                      <strong>Last Working Day:</strong> {work.lastworkingday}
+                    </p>
+                    <p>
+                      <strong>Notice Period:</strong> {work.noticeperiod}
                     </p>
                     <p>
                       <strong>Skills:</strong> {work.skills}

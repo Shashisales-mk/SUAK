@@ -28,6 +28,9 @@ const ApplyForm = () => {
         currentCTC: "", // Will be cast to a number
         expectedCTC: "", // Will be cast to a number
         skills: "",
+        lastworkingday: "",
+        noticeperiod: "",
+        totalexperience: "",
       },
     ],
   });
@@ -131,6 +134,9 @@ const ApplyForm = () => {
             currentCTC: "",
             expectedCTC: "",
             skills: "",
+            lastworkingday: "",
+            noticeperiod: "",
+            totalexperience: "",
           },
         ],
       });
@@ -353,7 +359,57 @@ const ApplyForm = () => {
                     onChange={(e) => handleWorkExperienceChange(index, e)}
                     required
                   />{" "}
+                  <input
+                    type="number"
+                    name="totalexperience"
+                    placeholder="Total Experience {in years}"
+                    value={work.totalexperience}
+                    onChange={(e) => handleWorkExperienceChange(index, e)}
+                    required
+                  />{" "}
                   {/* Updated */}
+                </div>
+                <div className="apply-form-d">
+                <p>
+                    <label
+                      htmlFor="lastworkingday"
+                      style={{
+                        fontWeight: "bold",
+                        marginBottom: "5px",
+                        display: "block",
+                      }}
+                    >
+                      Last Working Day
+                    </label>
+                    <input
+                      type="date"
+                      name="lastworkingday"
+                      placeholder="Last working Day"
+                      value={work.lastworkingday}
+                      onChange={(e) => handleWorkExperienceChange(index, e)}
+                      required
+                    />
+                  </p>
+                  <p>
+                    <label
+                      htmlFor="noticeperiod"
+                      style={{
+                        fontWeight: "bold",
+                        marginBottom: "5px",
+                        display: "block",
+                      }}
+                    >
+                      Notice Period
+                    </label>
+                    <input
+                      type="number"
+                      name="noticeperiod"
+                      placeholder="Notice Period (in days)"
+                      value={work.startDate}
+                      onChange={(e) => handleWorkExperienceChange(index, e)}
+                      required
+                    />
+                  </p>
                 </div>
                 <div className="apply-form-d">
                   <input
