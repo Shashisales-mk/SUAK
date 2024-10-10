@@ -68,7 +68,9 @@
     display: grid;
     gap: 1rem;
 }
-
+.colr{
+    color: #000;
+}
 @media only screen and (max-width: 1024px) {
     .dis-non{
         display: none;

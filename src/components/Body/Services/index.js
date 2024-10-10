@@ -138,12 +138,12 @@ export default function Services() {
                 <div className="opt-cont">
                   <div style={{ width: "13rem" }}>
                     <span style={{ textDecoration: "underline" }}>
-                      apply for trending jobs
+                      <Link className="colr" to="/careers">apply for trending jobs</Link>
                     </span>
                   </div>
                   <div style={{ width: "13rem" }}>
                     <span style={{ textDecoration: "underline" }}>
-                      view all current job openings
+                    <Link className="colr" to="/careers">view all current job openings</Link>
                     </span>
                   </div>
                 </div>

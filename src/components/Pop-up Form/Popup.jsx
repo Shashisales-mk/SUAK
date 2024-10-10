@@ -18,29 +18,47 @@ const PopForm = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const response = await fetch('/api/leads', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      alert('Lead successfully submitted!');
-      setFormData({
-        name: '',
-        contactNumber: '',
-        email: '',
-        message: ''
+  
+    const isProduction = window.location.hostname === 'suak.in';
+    const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
+  
+    try {
+      const response = await fetch(`${baseURL}api/get-started`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      onClose();
-    } else {
-      alert('There was an error.');
+      
+  
+      // Check if the response is JSON
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        const result = await response.json();
+        if (result.success) {
+          alert('Thank you for reaching out to us!');
+          setFormData({
+            name: '',
+            contactNumber: '',
+            email: '',
+            message: '',
+          });
+          onClose();
+        } else {
+          alert('There was an error.');
+        }
+      } else {
+        console.error('Response is not JSON:', response);
+        alert('There was an error processing your request.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting the form.');
     }
   };
+  
+
 
   return (
     <div className="popup-form">

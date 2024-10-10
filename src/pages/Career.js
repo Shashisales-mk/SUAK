@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './career.css';
-import jobimg1 from '../images/job-p.png';
+import jobimg1 from '../images/logo2.png';
 import jobimg2 from '../images/job-l.png';
 import jobimg3 from '../images/job-le.png';
 import shareImg from '../images/shareImg.svg';
@@ -18,10 +18,9 @@ const Career = () => {
     sortBy: '',
   });
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeFilters, setActiveFilters] = useState([]); // New state for active filter tags
 
   const navigate = useNavigate();
-  // const isProduction = window.location.hostname === 'suak.in';
-  // const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
   const baseurl = "https://suak.in/";
 
   useEffect(() => {
@@ -72,6 +71,7 @@ const Career = () => {
       jobType: '',
       sortBy: '',
     });
+    setActiveFilters([]); // Clear active filters
   };
 
   const toggleDropdown = (dropdown) => {
@@ -79,10 +79,38 @@ const Career = () => {
   };
 
   const handleFilterChange = (value, filterType) => {
+    // Update filters state
     setFilters({
       ...filters,
       [filterType]: value,
     });
+
+    // Add or update the filter tag in the active filters list
+    if (value) {
+      setActiveFilters((prev) => {
+        const filterExists = prev.find((filter) => filter.type === filterType);
+        if (filterExists) {
+          return prev.map((filter) =>
+            filter.type === filterType ? { type: filterType, value } : filter
+          );
+        } else {
+          return [...prev, { type: filterType, value }];
+        }
+      });
+    } else {
+      removeFilterTag(filterType); // Remove tag if value is cleared
+    }
+  };
+
+  const removeFilterTag = (filterType) => {
+    // Clear the filter value in the state
+    setFilters({
+      ...filters,
+      [filterType]: '',
+    });
+
+    // Remove the filter tag from active filters
+    setActiveFilters((prev) => prev.filter((filter) => filter.type !== filterType));
   };
 
   const renderJobs = () => {
@@ -102,9 +130,13 @@ const Career = () => {
         </div>
         <div className="job-qualifications">
           <strong>Minimum qualifications:</strong>
-          <ul>
-            {job.qualifications.map((q, i) => (
-              <li key={i}>{q}</li>
+          <ul dangerouslySetInnerHTML={{ __html: job.preferedqualifications }} />
+          <strong>Skills:</strong>
+          <ul style={{ display: 'flex', gap: '1vw' }}>
+            {job.skills.map((q, i) => (
+              <li style={{ listStyle: 'none' }} key={i}>
+                {q},
+              </li>
             ))}
           </ul>
         </div>
@@ -129,7 +161,6 @@ const Career = () => {
   return (
     <>
       <Navbar />
-
       <div className="career-container">
         {/* Sidebar with filters */}
         <div className="filter-sidebar">
@@ -149,14 +180,8 @@ const Career = () => {
               <a href="#" onClick={() => handleFilterChange('', 'location')}>
                 All Locations
               </a>
-              <a href="#" onClick={() => handleFilterChange('Remote', 'location')}>
-                Remote
-              </a>
-              <a href="#" onClick={() => handleFilterChange('United States', 'location')}>
-                United States
-              </a>
-              <a href="#" onClick={() => handleFilterChange('Europe', 'location')}>
-                Europe
+              <a href="#" onClick={() => handleFilterChange('Noida', 'location')}>
+                Noida
               </a>
             </div>
           )}
@@ -221,7 +246,17 @@ const Career = () => {
               </a>
             </div>
           )}
-
+          {/* Render active filter tags */}
+          <div className="active-filters">
+            {activeFilters.map((filter, index) => (
+              <div className="filter-tag" key={index}>
+                {filter.value}
+                <span className="close-btn" onClick={() => removeFilterTag(filter.type)}>
+                  &times;
+                </span>
+              </div>
+            ))}
+          </div>
           <button className="clear-filters" onClick={clearFilters}>
             Clear All Filters
           </button>

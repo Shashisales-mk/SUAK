@@ -190,4 +190,10 @@ body {
       transform: translateY(0);
     }
   }
+  .admsec{
+    margin-top: 2vw;
+  }
+  /* .admsec p{
+    height: 10vw !important;
+  } */
   

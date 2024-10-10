@@ -1,0 +1,95 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap'); */
+
+.thank-you-container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #ff7000; */
+  }
+  
+  .background-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .line {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    opacity: 0.3;
+    animation: moveLine linear infinite;
+  }
+  
+  @keyframes moveLine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .content-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 16px;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .message {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 24px;
+  }
+  
+  .emoji {
+    font-size: 3rem;
+    margin-bottom: 24px;
+  }
+  
+  .sub-message {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.875rem;
+    color: #777;
+    margin-bottom: 24px;
+  }
+  
+  .bak-button {
+    background: linear-gradient(to bottom, #ff7000, #dc6a0c9b);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back-button:active {
+    transform: translateY(0);
+  }

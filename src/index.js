@@ -15,6 +15,7 @@ import AdminLogin from './pages/AdminLogin';
 import AdminPanel from './pages/AdminPanel';
 import JobDetails from './pages/JobDetails';
 import ApplyForm from './pages/ApplyForm'; // New import for Apply page
+import ThankYouPage from './pages/ThankYouPage';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -51,12 +52,16 @@ const router = createBrowserRouter([
     element: <TalentServices />,
   },
   {
-    path: "career",
+    path: "careers",
     element: <Career />,
   },
   {
     path: "privacy-policy",
     element: <PrivacyPolicy />,
+  },
+  {
+    path: "thank-you",
+    element: <ThankYouPage />,
   },
   // {
   //   path: "job",

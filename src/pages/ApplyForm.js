@@ -4,6 +4,7 @@ import axios from "axios";
 import "./ApplyForm.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useNavigate } from 'react-router-dom';
 
 const ApplyForm = () => {
   const { id } = useParams(); // Extract job ID from URL
@@ -11,11 +12,11 @@ const ApplyForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    phone: "", // Will be cast to a number
     address: "",
     city: "",
     state: "",
-    zip: "",
+    zip: "", // Will be cast to a number
     additionalInfo: "",
     resume: null, // For resume upload
     workExperience: [{
@@ -23,8 +24,8 @@ const ApplyForm = () => {
       jobTitle: "",
       startDate: "",
       endDate: "",
-      currentCTC: "",
-      expectedCTC: "",
+      currentCTC: "", // Will be cast to a number
+      expectedCTC: "", // Will be cast to a number
       skills: ""
     }]
   });
@@ -32,7 +33,10 @@ const ApplyForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ 
+      ...formData, 
+      [name]: name === 'phone' || name === 'zip' ? Number(value) : value // Cast phone and zip to numbers
+    });
   };
 
   const handleFileChange = (e) => {
@@ -42,32 +46,37 @@ const ApplyForm = () => {
   const handleWorkExperienceChange = (index, e) => {
     const { name, value } = e.target;
     const updatedWorkExperience = [...formData.workExperience];
-    updatedWorkExperience[index] = { ...updatedWorkExperience[index], [name]: value };
+    updatedWorkExperience[index] = { 
+      ...updatedWorkExperience[index], 
+      [name]: name === 'currentCTC' || name === 'expectedCTC' ? Number(value) : value // Cast CTC fields to numbers
+    };
     setFormData({ ...formData, workExperience: updatedWorkExperience });
   };
 
-  const addWorkExperience = () => {
-    setFormData({
-      ...formData,
-      workExperience: [
-        ...formData.workExperience,
-        { company: "", jobTitle: "", startDate: "", endDate: "", currentCTC: "", expectedCTC: "", skills: "" }
-      ]
-    });
-  };
+  // const addWorkExperience = () => {
+  //   setFormData({
+  //     ...formData,
+  //     workExperience: [
+  //       ...formData.workExperience,
+  //       { company: "", jobTitle: "", startDate: "", endDate: "", currentCTC: "", expectedCTC: "", skills: "" }
+  //     ]
+  //   });
+  // };
+
   const isProduction = window.location.hostname === 'suak.in';
   const baseURL = isProduction ? 'https://suak.in/' : 'http://localhost:5000/';
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const applicationData = {
       ...formData,
       jobId: id, // Include jobId in the submission data
     };
-
+  
     console.log("Application Data:", applicationData); // Log to check jobId
-
+  
     const formDataToSend = new FormData();
     for (const key in applicationData) {
       if (Array.isArray(applicationData[key])) {
@@ -80,17 +89,18 @@ const ApplyForm = () => {
         formDataToSend.append(key, applicationData[key]);
       }
     }
-
+  
     try {
+      // First, submit the job application data
       const response = await axios.post(`${baseURL}api/job-application`, formDataToSend, {
         headers: {
-          "Content-Type": "multipart/form-data"
-        }
+          "Content-Type": "multipart/form-data",
+        },
       });
       console.log("Application submitted successfully:", response.data);
       setSuccessMessage(true); // Show success message
-
-      // Reset form fields
+  
+      // Reset form fields after successful submission
       setFormData({
         firstName: "",
         lastName: "",
@@ -102,13 +112,50 @@ const ApplyForm = () => {
         zip: "",
         additionalInfo: "",
         resume: null,
-        workExperience: [{ company: "", jobTitle: "", startDate: "", endDate: "", currentCTC: "", expectedCTC: "", skills: "" }]
+        workExperience: [{ company: "", jobTitle: "", startDate: "", endDate: "", currentCTC: "", expectedCTC: "", skills: "" }],
       });
-
+  
       // Automatically hide the success message after 3 seconds
       setTimeout(() => setSuccessMessage(false), 3000);
+  
+      // Then, submit the contact form data (if needed)
+      const contactFormData = {
+        name: formData.name,
+        contactNumber: formData.contactNumber,
+        email: formData.email,
+        message: formData.message,
+      };
+  
+      const contactResponse = await fetch(`${baseURL}api/get-started`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactFormData),
+      });
+  
+      // Check if the response is JSON
+      const contentType = contactResponse.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        const result = await contactResponse.json();
+        if (result.success) {
+          console.log('Lead successfully submitted!');
+          setFormData({
+            name: '',
+            contactNumber: '',
+            email: '',
+            message: '',
+          });
+          navigate('/thank-you'); // Redirect to Thank You page
+        } else {
+          alert('There was an error submitting the contact form.');
+        }
+      } else {
+        console.error('Response is not JSON:', contactResponse);
+        alert('There was an error processing your request.');
+      }
     } catch (error) {
-      console.error("Error submitting application:", error.response.data);
+      console.error('Error submitting application:', error.response ? error.response.data : error);
     }
   };
 
@@ -132,12 +179,12 @@ const ApplyForm = () => {
             <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
           </div>
           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-          <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
+          <input type="number" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required /> {/* Updated */}
           <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} required />
           <div className="apply-form-d">
             <input type="text" name="city" placeholder="City" value={formData.city} onChange={handleChange} required />
             <input type="text" name="state" placeholder="State" value={formData.state} onChange={handleChange} required />
-            <input type="text" name="zip" placeholder="Zip Code" value={formData.zip} onChange={handleChange} required />
+            <input type="number" name="zip" placeholder="Zip Code" value={formData.zip} onChange={handleChange} required /> {/* Updated */}
           </div>
           
           <div className="work-experience">
@@ -153,15 +200,15 @@ const ApplyForm = () => {
                     <input type="date" name="endDate" placeholder="End Date" value={work.endDate} onChange={(e) => handleWorkExperienceChange(index, e)} />
                 </div>
                 <div className="apply-form-d">
-                    <input type="text" name="currentCTC" placeholder="Current CTC" value={work.currentCTC} onChange={(e) => handleWorkExperienceChange(index, e)} required />
-                    <input type="text" name="expectedCTC" placeholder="Expected CTC" value={work.expectedCTC} onChange={(e) => handleWorkExperienceChange(index, e)} required />
+                    <input type="number" name="currentCTC" placeholder="Current CTC" value={work.currentCTC} onChange={(e) => handleWorkExperienceChange(index, e)} required /> {/* Updated */}
+                    <input type="number" name="expectedCTC" placeholder="Expected CTC" value={work.expectedCTC} onChange={(e) => handleWorkExperienceChange(index, e)} required /> {/* Updated */}
                 </div>
                 <div className="apply-form-d">
                     <input type="text" name="skills" placeholder="Skills" value={work.skills} onChange={(e) => handleWorkExperienceChange(index, e)} required />
                 </div>
               </div>
             ))}
-            <button type="button" onClick={addWorkExperience}>Add Work Experience</button>
+            {/* <button type="button" onClick={addWorkExperience}>Add Work Experience</button> */}
           </div>
           <textarea name="additionalInfo" placeholder="Additional Information" value={formData.additionalInfo} onChange={handleChange} />
           <button type="submit" className="submit-btn">
