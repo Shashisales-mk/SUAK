@@ -6,9 +6,11 @@ import Choose from './components/Body/WhyChooseUs';
 import Callback from './components/Body/CallBack/Callback';
 // import PopForm from './components/Pop-up Form/Popup';
 import Footer from './components/Footer';
+import ScrollToTop from './ScrollToTop';
 function App() {
   return (
     <div className="App">
+      <ScrollToTop></ScrollToTop>
       <Navbar></Navbar>
       <div className='middle'>
       <Start></Start>

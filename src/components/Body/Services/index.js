@@ -177,7 +177,7 @@ export default function Services() {
 
                 <div className="opt-cont">
                   <span style={{ textDecoration: "underline", position: "relative" }}>
-                    submit your resume
+                  <Link style={{ color:"#000" }} to="mailto:shreyashmeshram76@gmail.com?subject=Job%20Application&body=Dear%20HR%20Team,%0D%0A%0D%0A[FILL%20IN%20YOUR%20DETAILS%20%26%20SEND%20MAIL]%0D%0A%0D%0AI%20hope%20this%20email%20finds%20you%20well.%20Please%20find%20the%20details%20below%20along%20with%20my%20attached%20resume%20for%20your%20consideration.%0D%0A%0D%0AName:%20%0D%0AJob%20Title:%20%0D%0ATotal%20Experience:%20%0D%0ARelevant%20Experience:%20%0D%0ACurrent%20CTC:%20%0D%0AExpected%20CTC:%20%0D%0ANotice%20Period:%20%0D%0ALast%20Working%20Day:%20%20(if%20applicable)%0D%0A%0D%0AI%20look%20forward%20to%20hearing%20from%20you%20regarding%20any%20relevant%20opportunities.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]">submit your resume</Link>
                   </span>
                   <div style={{ width: "13rem" }}>
                     <span
@@ -264,12 +264,12 @@ export default function Services() {
             <div className="opt-cont">
               <div className="w-c">
                 <span className="f-s" style={{ textDecoration: "underline" }}>
-                  submit your resume
+                <Link style={{ color:"#000" }} to="mailto:shreyashmeshram76@gmail.com?subject=Job%20Application&body=Dear%20HR%20Team,%0D%0A%0D%0A[FILL%20IN%20YOUR%20DETAILS%20%26%20SEND%20MAIL]%0D%0A%0D%0AI%20hope%20this%20email%20finds%20you%20well.%20Please%20find%20the%20details%20below%20along%20with%20my%20attached%20resume%20for%20your%20consideration.%0D%0A%0D%0AName:%20%0D%0AJob%20Title:%20%0D%0ATotal%20Experience:%20%0D%0ARelevant%20Experience:%20%0D%0ACurrent%20CTC:%20%0D%0AExpected%20CTC:%20%0D%0ANotice%20Period:%20%0D%0ALast%20Working%20Day:%20%20(if%20applicable)%0D%0A%0D%0AI%20look%20forward%20to%20hearing%20from%20you%20regarding%20any%20relevant%20opportunities.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]">submit your resume</Link>
                 </span>
               </div>
               <div className="w-c">
                 <span className="f-s" onClick={handleFriendClick} style={{ textDecoration: "underline" }}>
-                  refer a freind
+                  refer a friend
                 </span>
                 <div
                       className="share-options setposmob"
