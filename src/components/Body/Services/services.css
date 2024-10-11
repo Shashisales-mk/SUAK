@@ -59,6 +59,21 @@
 .opt-cont{
     display: flex;
     gap: 2rem;
+    justify-content: space-between;
+}
+.f-s{
+    position: relative;
+}
+.apply-bt:hover{
+    cursor: pointer;
+}
+.setpos{
+    top: 180% !important;
+    right: 18% !important;
+}
+.setposmob {
+    top: 143% !important;
+    right: 10% !important;
 }
 .border-right{
     border-right: 1px solid;

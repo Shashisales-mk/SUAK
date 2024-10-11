@@ -5,7 +5,7 @@ import "./ApplyForm.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-
+import ScrollToTop from "../ScrollToTop";
 const ApplyForm = () => {
   const { id } = useParams(); // Extract job ID from URL
   const [formData, setFormData] = useState({
@@ -190,6 +190,7 @@ const ApplyForm = () => {
 
   return (
     <>
+    <ScrollToTop></ScrollToTop>
       <Navbar />
       <div className="apply-form">
         {successMessage && (

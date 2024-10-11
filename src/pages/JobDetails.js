@@ -8,7 +8,7 @@ import shareImg from "../images/shareImg.svg";
 import shareIcon1 from "../images/shareIcon1.png";
 import shareIcon2 from "../images/shareIcon2.png";
 import "./JobDetails.css";
-
+import ScrollToTop from "../ScrollToTop";
 const JobDetails = () => {
   const [jobsData, setJobsData] = useState([]);
   const [otherJobs, setOtherJobs] = useState([]);
@@ -81,6 +81,7 @@ const JobDetails = () => {
 
   return (
     <>
+    <ScrollToTop></ScrollToTop>
       <Navbar />
       <div className="job-container">
         <header className="job-header">
@@ -226,7 +227,7 @@ const JobDetails = () => {
                 </p>
                 <p>
                   <strong>Minimum Qualifications:</strong>
-                  <small dangerouslySetInnerHTML={{ __html: job.preferedqualifications }}></small>
+                  <small dangerouslySetInnerHTML={{ __html: otherJob.preferedqualifications }}></small>
                   {/* {otherJob.preferedqualifications} */}
                 </p>
                 <button onClick={() => navigate(`/job/${jobsData.indexOf(otherJob)}`)}>

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import ScrollToTop from '../ScrollToTop';
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,6 +30,7 @@ const AdminLogin = () => {
 
   return (
     <>
+    <ScrollToTop></ScrollToTop>
     <Navbar></Navbar>
     <div style={styles.container}>
       <form onSubmit={handleLogin} style={styles.form}>

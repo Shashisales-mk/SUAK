@@ -4,8 +4,8 @@
     font-size: 1rem;
 }
 .other-jobs .job-card{
-    display: grid !important;
-    gap: 0.5vw;
+    display: flex !important;
+    flex-direction: column;
 }
 .other-jobs .job-card p{
     text-align: start;

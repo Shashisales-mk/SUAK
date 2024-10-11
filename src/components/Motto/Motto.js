@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import "./motto.css"
+import PopForm from '../Pop-up Form/Popup';
 function Motto() {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleGetStarted = () => {
+    setShowForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
   return (
     <div>
         <div className='motto-container'>
@@ -10,12 +21,14 @@ function Motto() {
             </div>
             <div className='motto2'>
                 <div className='motto4'>
-                    <button className='box1'>HIRING</button>
-                    <button className='box2'>SEEKER</button>
+                    <button onClick={handleGetStarted} className='box1'>HIRING</button>
+                    <button className='box2'><Link to="/careers" style={{textDecoration:"none", color:"#000"}}>SEEKER</Link></button>
                 </div>
             </div>
             <div className='bor-lin'></div>
         </div>
+        {/* Render the PopForm only when showForm is true */}
+      {showForm && <PopForm onClose={handleCloseForm} />}
     </div>
   )
 }

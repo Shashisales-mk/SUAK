@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./services.css";
 import barchart from "../../../images/bar-chart.gif";
@@ -6,6 +6,29 @@ import businessplan from "../../../images/business-plan.gif";
 import startup from "../../../images/startup.gif";
 import strategicconsulting from "../../../images/strategic-consulting.gif";
 export default function Services() {
+  const [activeShareIndex, setActiveShareIndex] = useState(false); // Use a boolean since there's only one option
+
+  const handleFriendClick = () => {
+    setActiveShareIndex(!activeShareIndex); // Toggle between true/false
+  };
+
+  const handleReferFriendClick = (action) => {
+    const currentUrl = window.location.href;
+
+    if (action === "copy") {
+      navigator.clipboard
+        .writeText(currentUrl)
+        .then(() => {
+          alert("Link copied to clipboard!");
+        })
+        .catch((err) => {
+          console.error("Failed to copy: ", err);
+        });
+    } else {
+      console.log("Link was not fetched");
+    }
+  };
+
   return (
     <div>
       <div className="service-container">
@@ -138,26 +161,51 @@ export default function Services() {
                 <div className="opt-cont">
                   <div style={{ width: "13rem" }}>
                     <span style={{ textDecoration: "underline" }}>
-                      <Link className="colr" to="/careers">apply for trending jobs</Link>
+                      <Link className="colr" to="/careers">
+                        apply for trending jobs
+                      </Link>
                     </span>
                   </div>
                   <div style={{ width: "13rem" }}>
                     <span style={{ textDecoration: "underline" }}>
-                    <Link className="colr" to="/careers">view all current job openings</Link>
+                      <Link className="colr" to="/careers">
+                        view all current job openings
+                      </Link>
                     </span>
                   </div>
                 </div>
 
                 <div className="opt-cont">
+                  <span style={{ textDecoration: "underline", position: "relative" }}>
+                    submit your resume
+                  </span>
                   <div style={{ width: "13rem" }}>
-                    <span style={{ textDecoration: "underline" }}>
-                      submit your resume
+                    <span
+                      className="apply-bt"
+                      onClick={handleFriendClick} // No need to pass an index if there's only one option
+                      style={{ textDecoration: "underline" }}
+                    >
+                      refer a friend
                     </span>
-                  </div>
-                  <div style={{ width: "13rem" }}>
-                    <span style={{ textDecoration: "underline" }}>
-                      refer a freind
-                    </span>
+
+                    <div
+                      className="share-options setpos"
+                      style={{
+                        display: activeShareIndex ? "flex" : "none",
+                        marginTop: "5px",
+                      }}
+                    >
+                      <div
+                        className="share-option"
+                        data-action="copy"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleReferFriendClick("copy");
+                        }}
+                      >
+                        Copy link
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -199,12 +247,16 @@ export default function Services() {
             <div className="opt-cont">
               <div className="w-c">
                 <span className="f-s" style={{ textDecoration: "underline" }}>
-                  apply for trending jobs
+                <Link className="colr" to="/careers">
+                apply for trending jobs
+                      </Link>
                 </span>
               </div>
               <div className="w-c">
                 <span className="f-s" style={{ textDecoration: "underline" }}>
-                  view all current job openings
+                <Link className="colr" to="/careers">
+                        view all current job openings
+                      </Link>
                 </span>
               </div>
             </div>
@@ -216,9 +268,27 @@ export default function Services() {
                 </span>
               </div>
               <div className="w-c">
-                <span className="f-s" style={{ textDecoration: "underline" }}>
+                <span className="f-s" onClick={handleFriendClick} style={{ textDecoration: "underline" }}>
                   refer a freind
                 </span>
+                <div
+                      className="share-options setposmob"
+                      style={{
+                        display: activeShareIndex ? "flex" : "none",
+                        marginTop: "5px",
+                      }}
+                    >
+                      <div
+                        className="share-option"
+                        data-action="copy"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleReferFriendClick("copy");
+                        }}
+                      >
+                        Copy link
+                      </div>
+                    </div>
               </div>
             </div>
           </div>

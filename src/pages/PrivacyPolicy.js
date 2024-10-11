@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./privacyPolicy.css"
+import ScrollToTop from "../ScrollToTop";
 function PrivacyPolicy() {
   return (
     <>
@@ -17,6 +18,7 @@ function PrivacyPolicy() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
+      <ScrollToTop></ScrollToTop>
       <Navbar />
       <main className="privacy-policy-container">
         <h1>Privacy Policy</h1>

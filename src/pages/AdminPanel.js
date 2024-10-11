@@ -4,9 +4,9 @@ import "./AdminPanel.css";
 import Navbar from "../components/Navbar";
 // import JoditEditor from "jodit-pro-react";
 import { Link } from "react-router-dom";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import ScrollToTop from "../ScrollToTop";
 const AdminPanel = () => {
   const editor = useRef(null);
   // let [content, setContent] = useState("")
@@ -16,7 +16,6 @@ const AdminPanel = () => {
   const navigate = useNavigate();
   const [statusUpdateLoading, setStatusUpdateLoading] = useState(false);
   const [statusUpdateError, setStatusUpdateError] = useState(null);
-
 
   const [jobs, setJobs] = useState([]);
   const [applications, setApplications] = useState([]);
@@ -106,7 +105,6 @@ const AdminPanel = () => {
     });
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newId = jobs.length ? Math.max(...jobs.map((job) => job.id)) + 1 : 1;
@@ -151,10 +149,12 @@ const AdminPanel = () => {
         console.log(editJobId ? "Job updated!" : "Job added!", responseData);
         fetchJobs();
         resetForm();
-        alert(editJobId ? "Job updated successfully!" : "Job added successfully!");
+        alert(
+          editJobId ? "Job updated successfully!" : "Job added successfully!"
+        );
       } else {
         console.error("Server returned an error:", responseData);
-        let errorMessage = responseData.message || 'Unknown error';
+        let errorMessage = responseData.message || "Unknown error";
         if (responseData.error) {
           errorMessage += `: ${responseData.error}`;
         }
@@ -162,10 +162,11 @@ const AdminPanel = () => {
       }
     } catch (error) {
       console.error("Error submitting job:", error);
-      alert(`Error submitting job: ${error.message || 'Unknown error occurred'}`);
+      alert(
+        `Error submitting job: ${error.message || "Unknown error occurred"}`
+      );
     }
   };
-
 
   const handleEdit = (job) => {
     setJobForm({
@@ -219,45 +220,51 @@ const AdminPanel = () => {
     setStatusUpdateLoading(true);
     setStatusUpdateError(null);
     try {
-      const response = await fetch(`${baseURL}api/application/update-status/${applicationId}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ status: newStatus }),
-      });
+      const response = await fetch(
+        `${baseURL}api/application/update-status/${applicationId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ status: newStatus }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log(`Application ${applicationId} status updated to ${newStatus}`);
+      console.log(
+        `Application ${applicationId} status updated to ${newStatus}`
+      );
       fetchApplications(selectedJobId);
     } catch (error) {
       console.error("Error updating application status:", error);
-      setStatusUpdateError(error.message || 'Failed to update application status');
+      setStatusUpdateError(
+        error.message || "Failed to update application status"
+      );
     } finally {
       setStatusUpdateLoading(false);
     }
   };
 
   const handleHire = async (applicationId) => {
-    await updateApplicationStatus(applicationId, 'hired');
+    await updateApplicationStatus(applicationId, "hired");
   };
 
   const handleReject = async (applicationId) => {
-    await updateApplicationStatus(applicationId, 'rejected');
+    await updateApplicationStatus(applicationId, "rejected");
   };
 
   const handleShortlist = async (applicationId) => {
-    await updateApplicationStatus(applicationId, 'shortlisted');
+    await updateApplicationStatus(applicationId, "shortlisted");
   };
-
-
 
   return (
     <>
+    <ScrollToTop></ScrollToTop>
       <Navbar></Navbar>
       <h1 style={styles.heading}>Welcome To SUAK Admin Panel</h1>
       {/* <p style={styles.subheading}>Manage your dashboard and perform administrative tasks.</p> */}
@@ -377,7 +384,9 @@ const AdminPanel = () => {
                   <ReactQuill
                     theme="snow"
                     value={jobForm.aboutthejob}
-                    onChange={(value) => handleQuillChange(value, 'aboutthejob')}
+                    onChange={(value) =>
+                      handleQuillChange(value, "aboutthejob")
+                    }
                   />
                 </div>
 
@@ -388,7 +397,9 @@ const AdminPanel = () => {
                   <ReactQuill
                     theme="snow"
                     value={jobForm.preferedqualifications}
-                    onChange={(value) => handleQuillChange(value, 'preferedqualifications')}
+                    onChange={(value) =>
+                      handleQuillChange(value, "preferedqualifications")
+                    }
                   />
                 </div>
 
@@ -399,7 +410,9 @@ const AdminPanel = () => {
                   <ReactQuill
                     theme="snow"
                     value={jobForm.responsibilities}
-                    onChange={(value) => handleQuillChange(value, 'responsibilities')}
+                    onChange={(value) =>
+                      handleQuillChange(value, "responsibilities")
+                    }
                   />
                 </div>
 
@@ -424,7 +437,9 @@ const AdminPanel = () => {
                   <ReactQuill
                     theme="snow"
                     value={jobForm.qualifications}
-                    onChange={(value) => handleQuillChange(value, 'qualifications')}
+                    onChange={(value) =>
+                      handleQuillChange(value, "qualifications")
+                    }
                   />
                 </div>
 
@@ -432,7 +447,6 @@ const AdminPanel = () => {
                   {editJobId ? "Update Job" : "Add Job"}
                 </button>
               </form>
-
 
               <h2 style={styles.jobListHeading}>Job Listings</h2>
               <ul style={styles.jobList}>
@@ -467,123 +481,132 @@ const AdminPanel = () => {
             </div>
           )}
 
-{activeSection === "view-applications" && ( // Conditionally render the 'View Applications' section
-  <div className="show-view-applications">
-    <h2 className="applicationsHeading">
-      Applications for Job ID: {selectedJobId}
-    </h2>
-    {applications.length > 0 ? (
-      <ul className="applicationsList">
-        {applications.map((app) => (
-          <li key={app._id} className="applicationItem">
-            <p>
-              <strong>Name:</strong> {app.firstName} {app.lastName}
-            </p>
-            <p>
-              <strong>Email:</strong> {app.email}
-            </p>
-            <p>
-              <strong>Phone:</strong> {app.phone}
-            </p>
-            <p>
-              <strong>Address:</strong> {app.address}
-            </p>
-            <p>
-              <strong>City:</strong> {app.city}
-            </p>
-            <p>
-              <strong>State:</strong> {app.state}
-            </p>
-            <p>
-              <strong>Zip:</strong> {app.zip}
-            </p>
-            <p>
-              <strong>Work Experience:</strong>
-            </p>
-            {app.workExperience && app.workExperience.length > 0 ? (
-              app.workExperience.map((work, index) => (
-                <div key={index} className="workExperienceContainer">
-                  <h3>{work.jobTitle} at {work.company}</h3>
-                  <div className="workExperienceDetails">
-                    <p>
-                      <strong>Start Date:</strong> {new Date(work.startDate).toLocaleDateString()}
-                    </p>
-                    <p>
-                      <strong>End Date:</strong> {work.endDate ? new Date(work.endDate).toLocaleDateString() : "Present"}
-                    </p>
-                    <p>
-                      <strong>Current CTC:</strong> ₹{work.currentCTC}
-                    </p>
-                    <p>
-                      <strong>Expected CTC:</strong> ₹{work.expectedCTC}
-                    </p>
-                    <p>
-                      <strong>Total Experience:</strong> {work.totalexperience}
-                    </p>
-                    <p>
-                      <strong>Last Working Day:</strong> {work.lastworkingday}
-                    </p>
-                    <p>
-                      <strong>Notice Period:</strong> {work.noticeperiod}
-                    </p>
-                    <p>
-                      <strong>Skills:</strong> {work.skills}
-                    </p>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p>N/A</p>
-            )}
-            {/* Download Resume Button */}
-            <p>
-  <strong>Resume:</strong>{" "}
-  <Link
-  to={`/resumes/${app.resume.split(/[/\\]/).pop()}`} // Extract the filename from either backslash or forward slash
-  download
-  className="downloadButton"
->
-  Download Resume
-</Link>
+          {activeSection === "view-applications" && ( // Conditionally render the 'View Applications' section
+            <div className="show-view-applications">
+              <h2 className="applicationsHeading">
+                Applications for Job ID: {selectedJobId}
+              </h2>
+              {applications.length > 0 ? (
+                <ul className="applicationsList">
+                  {applications.map((app) => (
+                    <li key={app._id} className="applicationItem">
+                      <p>
+                      <strong className="applicant-status">
+                        Status: {app.status}
+                      </strong>
+                      </p>
+                      <p>
+                        <strong>Name:</strong> {app.firstName} {app.lastName}
+                      </p>
+                      <p>
+                        <strong>Email:</strong> {app.email}
+                      </p>
+                      <p>
+                        <strong>Phone:</strong> {app.phone}
+                      </p>
+                      <p>
+                        <strong>Address:</strong> {app.address}
+                      </p>
+                      <p>
+                        <strong>City:</strong> {app.city}
+                      </p>
+                      <p>
+                        <strong>State:</strong> {app.state}
+                      </p>
+                      <p>
+                        <strong>Zip:</strong> {app.zip}
+                      </p>
+                      <p>
+                        <strong>Work Experience:</strong>
+                      </p>
+                      {app.workExperience && app.workExperience.length > 0 ? (
+                        app.workExperience.map((work, index) => (
+                          <div key={index} className="workExperienceContainer">
+                            <h3>
+                              {work.jobTitle} at {work.company}
+                            </h3>
+                            <div className="workExperienceDetails">
+                              <p>
+                                <strong>Start Date:</strong>{" "}
+                                {new Date(work.startDate).toLocaleDateString()}
+                              </p>
+                              <p>
+                                <strong>End Date:</strong>{" "}
+                                {work.endDate
+                                  ? new Date(work.endDate).toLocaleDateString()
+                                  : "Present"}
+                              </p>
+                              <p>
+                                <strong>Current CTC:</strong> ₹{work.currentCTC}
+                              </p>
+                              <p>
+                                <strong>Expected CTC:</strong> ₹
+                                {work.expectedCTC}
+                              </p>
+                              <p>
+                                <strong>Total Experience:</strong>{" "}
+                                {work.totalexperience}
+                              </p>
+                              <p>
+                                <strong>Last Working Day:</strong>{" "}
+                                {work.lastworkingday}
+                              </p>
+                              <p>
+                                <strong>Notice Period:</strong>{" "}
+                                {work.noticeperiod}
+                              </p>
+                              <p>
+                                <strong>Skills:</strong> {work.skills}
+                              </p>
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <p>N/A</p>
+                      )}
+                      {/* Download Resume Button */}
+                      <p>
+                        <strong>Resume:</strong>{" "}
+                        <a
+                          href={`${baseURL}${app.resume}`}
+                          download
+                          className="downloadButton"
+                        >
+                          Download Resume
+                        </a>
+                      </p>
 
-
-</p>
-
-<div className="application-actions">
+                      <div className="application-actions">
                         <button
                           onClick={() => handleHire(app._id)}
                           disabled={statusUpdateLoading}
-                          style={{ backgroundColor: '#4CAF50', color: 'white' }}
+                          style={{ backgroundColor: "#4CAF50", color: "white" }}
                         >
                           Hire
                         </button>
                         <button
                           onClick={() => handleReject(app._id)}
                           disabled={statusUpdateLoading}
-                          style={{ backgroundColor: '#f44336', color: 'white' }}
+                          style={{ backgroundColor: "#f44336", color: "white" }}
                         >
                           Reject
                         </button>
                         <button
                           onClick={() => handleShortlist(app._id)}
                           disabled={statusUpdateLoading}
-                          style={{ backgroundColor: '#2196F3', color: 'white' }}
+                          style={{ backgroundColor: "#2196F3", color: "white" }}
                         >
                           Shortlist
                         </button>
-                       
                       </div>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p>No applications found for this job.</p>
-    )}
-  </div>
-)}
-
-
-
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No applications found for this job.</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </>

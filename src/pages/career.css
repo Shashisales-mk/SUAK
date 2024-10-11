@@ -2,15 +2,27 @@
 
 .career-container {
     display: flex;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 4rem;
     margin-top: 2rem;
   }
-  
+  .career-container input, .career-container textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.career-container input:focus, .career-container textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
   .filter-sidebar {
-    width: 250px;
+    width: 25%;
     padding: 20px;
+    border-right: 1px solid #ccc;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
@@ -251,9 +263,6 @@
       padding: 10px;
     }
   
-    .filter-sidebar {
-      display: none;
-    }
   
     .filters-container {
       display: flex;
@@ -282,7 +291,6 @@
     }
   
     .filter-content {
-      display: none;
       position: absolute;
       background-color: #fff;
       min-width: 160px;
@@ -487,18 +495,6 @@
     justify-content: space-between;
     margin-top: 20px;
   }
-  
-  .career-container {
-    display: flex;
-    padding: 20px;
-  }
-  
-  .filter-sidebar {
-    width: 25%;
-    padding: 10px;
-    border-right: 1px solid #ccc;
-  }
-  
   .filter-dropdown {
     margin-bottom: 15px;
   }
@@ -532,7 +528,6 @@
   
   .job-listings {
     flex-grow: 1;
-    padding: 20px;
     width: 75%;
   }
   .job-listings input{
@@ -603,4 +598,36 @@
 }
 .close-btn:hover{
   cursor: pointer;
+}
+@media screen and (max-width: 768px){
+  .career-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .filter-sidebar{
+    width: 100%;
+    position: static;
+    margin-bottom: 2rem;
+  }
+  .filter-option{
+    width: 100%;
+  }
+  .job-listings {
+    width: 100%;
+}
+.job-card {
+  padding: 1rem 1.5rem;
+}
+.job-details {
+  font-size: 12px;
+  gap: 1.5rem;
+}
+.job-container {
+  margin-top: 0rem;
+}
+.job-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 }

@@ -1,5 +1,5 @@
 import React from "react";
-
+import ScrollToTop from "../ScrollToTop";
 const Jobs = ({ job }) => {
   const handleApplyClick = () => {
     alert("Application submitted!");
@@ -16,6 +16,7 @@ const Jobs = ({ job }) => {
 
   return (
     <div className="job-container">
+      <ScrollToTop></ScrollToTop>
       <header className="job-header">
         <a href="#" className="back-button">
           <span className="back-arrow">&#8592;</span> Back to jobs search

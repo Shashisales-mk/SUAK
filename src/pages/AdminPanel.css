@@ -8,7 +8,7 @@
     width: 70%;
 }
   
-  h1 {
+.main-admin-cont h1 {
     font-size: 2.5rem;
     color: #333;
     text-align: center;
@@ -16,7 +16,7 @@
     animation: fadeIn 1s ease-in-out;
   }
   
-  p {
+  .main-admin-cont p {
     text-align: center;
     color: #666;
     font-size: 1.2rem;

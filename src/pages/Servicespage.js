@@ -8,9 +8,11 @@ import Industeryweserve from '../components/IndusteryWeServe/Industeryweserve'
 import Choose from '../components/Body/WhyChooseUs'
 import Faq from '../components/FAQ/Faq'
 import Footer from '../components/Footer'
+import ScrollToTop from '../ScrollToTop'
 function Servicespage() {
   return (
     <div>
+      <ScrollToTop></ScrollToTop>
         <Navbar></Navbar>
         <Motto></Motto>
         <Manpower></Manpower>

@@ -7,7 +7,9 @@ import jobimg1 from '../images/logo2.png';
 import jobimg2 from '../images/job-l.png';
 import jobimg3 from '../images/job-le.png';
 import shareImg from '../images/shareImg.svg';
-
+import shareIcon1 from "../images/shareIcon1.png";
+import shareIcon2 from "../images/shareIcon2.png";
+import ScrollToTop from '../ScrollToTop';
 const Career = () => {
   const [jobs, setJobsData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,6 +21,7 @@ const Career = () => {
   });
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeFilters, setActiveFilters] = useState([]); // New state for active filter tags
+  const [activeShareIndex, setActiveShareIndex] = useState(null);
 
   const navigate = useNavigate();
   const baseurl = "https://suak.in/";
@@ -79,13 +82,11 @@ const Career = () => {
   };
 
   const handleFilterChange = (value, filterType) => {
-    // Update filters state
     setFilters({
       ...filters,
       [filterType]: value,
     });
 
-    // Add or update the filter tag in the active filters list
     if (value) {
       setActiveFilters((prev) => {
         const filterExists = prev.find((filter) => filter.type === filterType);
@@ -103,16 +104,40 @@ const Career = () => {
   };
 
   const removeFilterTag = (filterType) => {
-    // Clear the filter value in the state
     setFilters({
       ...filters,
       [filterType]: '',
     });
 
-    // Remove the filter tag from active filters
     setActiveFilters((prev) => prev.filter((filter) => filter.type !== filterType));
   };
 
+  const handleShareClick = (index) => {
+    setActiveShareIndex(activeShareIndex === index ? null : index);
+  };
+
+  const handleShareOptionClick = (action) => {
+    const currentUrl = `${window.location.origin}/job/${activeShareIndex}`; 
+
+    if (action === "copy") {
+      navigator.clipboard.writeText(currentUrl)
+        .then(() => {
+          alert("Link copied to clipboard!");
+        })
+        .catch((err) => {
+          console.error("Failed to copy: ", err);
+        });
+    } else if (action === "email") {
+      const subject = encodeURIComponent("Check out this job opportunity!");
+      const body = encodeURIComponent(`I found this interesting job on SUAK: ${currentUrl}`);
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    }
+
+    setActiveShareIndex(null);
+  };
+
+
+  // Function to render jobs
   const renderJobs = () => {
     return filteredJobs.map((job, index) => (
       <div className="job-card" key={index}>
@@ -147,11 +172,40 @@ const Career = () => {
           <div className="share-icon">
             <button
               className="action-button share-btn"
-              onClick={() => alert('Sharing functionality would be implemented here.')}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleShareClick(index);
+              }}
             >
               Share
             </button>
             <img src={shareImg} alt="Share icon" />
+            <div
+              className="share-options"
+              style={{ display: activeShareIndex === index ? "flex" : "none", marginTop: "5px" }}
+            >
+              <div
+                className="share-option"
+                data-action="copy"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleShareOptionClick("copy");
+                }}
+              >
+                <img src={shareIcon1} alt="Share icon" /> Copy link
+              </div>
+
+              <div
+                className="share-option"
+                data-action="email"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleShareOptionClick("email");
+                }}
+              >
+                <img src={shareIcon2} alt="Share icon" /> Email
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -160,13 +214,11 @@ const Career = () => {
 
   return (
     <>
+    <ScrollToTop></ScrollToTop>
       <Navbar />
       <div className="career-container">
-        {/* Sidebar with filters */}
         <div className="filter-sidebar">
           <h2>Filters</h2>
-
-          {/* Location Filter */}
           <div className="filter-option" onClick={() => toggleDropdown('locations')}>
             Locations <span>▼</span>
           </div>
@@ -185,8 +237,6 @@ const Career = () => {
               </a>
             </div>
           )}
-
-          {/* Experience Filter */}
           <div className="filter-option" onClick={() => toggleDropdown('experience')}>
             Experience <span>▼</span>
           </div>
@@ -208,8 +258,6 @@ const Career = () => {
               </a>
             </div>
           )}
-
-          {/* Job Type Filter */}
           <div className="filter-option" onClick={() => toggleDropdown('jobType')}>
             Job types <span>▼</span>
           </div>
@@ -231,8 +279,6 @@ const Career = () => {
               </a>
             </div>
           )}
-
-          {/* Sort By Filter */}
           <div className="filter-option" onClick={() => toggleDropdown('sortBy')}>
             Sort By <span>▼</span>
           </div>
@@ -246,7 +292,6 @@ const Career = () => {
               </a>
             </div>
           )}
-          {/* Render active filter tags */}
           <div className="active-filters">
             {activeFilters.map((filter, index) => (
               <div className="filter-tag" key={index}>
@@ -261,8 +306,6 @@ const Career = () => {
             Clear All Filters
           </button>
         </div>
-
-        {/* Job Listings */}
         <div className="job-listings">
           <h1>Find Your Job</h1>
           <input

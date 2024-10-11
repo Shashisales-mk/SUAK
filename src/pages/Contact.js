@@ -4,9 +4,11 @@ import Connect from '../components/ContactUs/Connect'
 import Inquiries from '../components/Inquiries/Inquiries'
 import Visitus from '../components/VisitUs/Visitus'
 import Footer from '../components/Footer'
+import ScrollToTop from '../ScrollToTop'
 function Contact() {
   return (
     <div>
+      <ScrollToTop></ScrollToTop>
             <Navbar></Navbar>
         <div style={{padding: "0 3vw"}}>
             <Connect></Connect>

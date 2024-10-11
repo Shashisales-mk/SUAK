@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import ScrollToTop from "../ScrollToTop";
 function StartupServices() {
   return (
     <>
+    <ScrollToTop></ScrollToTop>
       <Navbar />
       <main className="business-process">
         <section className="intro">
