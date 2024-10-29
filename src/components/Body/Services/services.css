@@ -165,6 +165,10 @@
         display: grid;
         gap: 2rem;
     }
+    .setposmob {
+        top: 115% !important;
+        right: 10% !important;
+    }
 }
 @media only screen and (max-width: 600px) {
     .dis{

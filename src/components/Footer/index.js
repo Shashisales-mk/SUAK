@@ -46,8 +46,8 @@ export default function Footer() {
         © Copyright SUAK Infotech Pvt Ltd. 2024. All rights reserved
         </div>
         <div className="styl" style={{ display: "flex", gap: "10px" }}>
-          <div><Link to="/privacy-policy">PRIVACY</Link></div>
-          <div>IMPRINT</div>
+          <div><Link to="/privacy-policy">PRIVACY POLICY</Link></div>
+          {/* <div>IMPRINT</div> */}
         </div>
       </div>
     </div>
