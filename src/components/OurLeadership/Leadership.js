@@ -9,9 +9,9 @@ function Leadership() {
                 <div className='part1'>
                     <ul>
                         <li className='sze'>OUR LEADERSHIP</li>
-                        <li className='d-sz'>Akash Gupta A visionary leader with a background in relevant field, Akash Gupta founded Suak with a mission-driven approach, leaveraging his experience to drive growth.</li>
-                        <li className='d-sz'>As president, Akash Gupta brings extensive experience in Staffing & Recruitment, spearheading strategic initiatives that propel Suak towards continued success.</li>
-                        <li className='d-sz'>Together, their leadership ensures Suak's commitment to excellence and innovation in corporates sector.</li>
+                        <li className='d-sz'>Our company is led by two visionary founders, Akash Sonkar & Sushant Singh, each bringing extensive experience across diverse business fields.</li>
+                        <li className='d-sz'>With a strong background in entrepreneurship, operations, and market development, they have successfully managed ventures in industries such as Textile , Healthcare, consultancy, retail , supply chain management . Their combined expertise and innovative thinking have been instrumental in building a dynamic, customer-centric organization.</li>
+                        <li className='d-sz'>Together, they are committed to driving growth, fostering innovation, and delivering high-quality solutions that meet evolving market needs. Their shared vision continues to guide the company towards new heights of success and sustainability.</li>
                     </ul>
                 </div>
                 <div className='part2'>
